@@ -173,3 +173,12 @@ footer {
   background: black;
   font-size: 14px;
 }
+
+.erro {
+  display: block;
+  color: #c00000;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
