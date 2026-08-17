@@ -248,7 +248,31 @@ function atualizarContador() {
 
 mostrarCarrinho();
 function irPagamento() {
-  
+
+  const endereco = JSON.parse(
+      localStorage.getItem("endereco")
+  );
+
+  if (
+      !endereco ||
+      !endereco.cep ||
+      !endereco.rua ||
+      !endereco.numero ||
+      !endereco.bairro ||
+      !endereco.cidade ||
+      !endereco.estado
+  ) {
+
+    alert(
+        "Para continuar a compra, cadastre seu endereço completo."
+    );
+
+    window.location.href =
+        "usuario.html#endereco";
+
+    return;
+  }
+
   window.location.href = "pagamento.html";
   
 }

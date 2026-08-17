@@ -124,17 +124,288 @@ if (botaoFoto && inputFoto) {
 const enderecoInfo =
     document.getElementById("enderecoInfo");
 
-const endereco =
-    JSON.parse(localStorage.getItem("endereco"));
+const botaoAdicionarEndereco =
+    document.getElementById("botaoAdicionarEndereco");
 
-if (endereco && enderecoInfo) {
+const formEndereco =
+    document.getElementById("formEndereco");
+
+const formCadastroEndereco =
+    document.getElementById("formCadastroEndereco");
+
+
+// ==========================================
+// MOSTRAR ENDEREÇO SALVO
+// ==========================================
+
+function mostrarEndereco() {
+
+    const enderecoAtual =
+        JSON.parse(localStorage.getItem("endereco"));
+
+    if (!enderecoAtual || !enderecoInfo) {
+        return;
+    }
 
     enderecoInfo.innerHTML = `
-        <p><strong>${endereco.rua || ""}</strong></p>
-        <p>${endereco.numero || ""} - ${endereco.bairro || ""}</p>
-        <p>${endereco.cidade || ""} - ${endereco.estado || ""}</p>
-        <p>CEP: ${endereco.cep || ""}</p>
+
+        <p>
+            <strong>${enderecoAtual.rua || ""}</strong>
+        </p>
+
+        <p>
+            ${enderecoAtual.numero || ""}
+            ${enderecoAtual.complemento
+        ? " - " + enderecoAtual.complemento
+        : ""}
+        </p>
+
+        <p>
+            ${enderecoAtual.bairro || ""}
+        </p>
+
+        <p>
+            ${enderecoAtual.cidade || ""}
+            - ${enderecoAtual.estado || ""}
+        </p>
+
+        <p>
+            CEP: ${enderecoAtual.cep || ""}
+        </p>
+
+        <button type="button" id="editarEndereco">
+            Editar endereço
+        </button>
+
     `;
+}
+
+
+// ==========================================
+// ABRIR FORMULÁRIO
+// ==========================================
+
+if (botaoAdicionarEndereco) {
+
+    botaoAdicionarEndereco.addEventListener(
+        "click",
+        function() {
+
+            if (formEndereco) {
+                formEndereco.style.display = "block";
+            }
+
+        }
+    );
+
+}
+
+
+// ==========================================
+// CARREGAR ENDEREÇO JÁ SALVO
+// ==========================================
+
+const enderecoSalvo =
+    JSON.parse(localStorage.getItem("endereco"));
+
+if (enderecoSalvo) {
+
+    const cep = document.getElementById("cep");
+    const rua = document.getElementById("rua");
+    const numero = document.getElementById("numero");
+    const complemento = document.getElementById("complemento");
+    const bairro = document.getElementById("bairro");
+    const cidade = document.getElementById("cidade");
+    const estado = document.getElementById("estado");
+
+    if (cep) cep.value = enderecoSalvo.cep || "";
+    if (rua) rua.value = enderecoSalvo.rua || "";
+    if (numero) numero.value = enderecoSalvo.numero || "";
+    if (complemento) complemento.value = enderecoSalvo.complemento || "";
+    if (bairro) bairro.value = enderecoSalvo.bairro || "";
+    if (cidade) cidade.value = enderecoSalvo.cidade || "";
+    if (estado) estado.value = enderecoSalvo.estado || "";
+
+    mostrarEndereco();
+}
+
+
+// ==========================================
+// SALVAR ENDEREÇO
+// ==========================================
+
+if (formCadastroEndereco) {
+
+    formCadastroEndereco.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            // LIMPAR ERROS
+
+            document.querySelectorAll(".erro")
+                .forEach(function(erro) {
+
+                    erro.textContent = "";
+
+                });
+
+
+            const cep =
+                document.getElementById("cep").value.trim();
+
+            const rua =
+                document.getElementById("rua").value.trim();
+
+            const numero =
+                document.getElementById("numero").value.trim();
+
+            const complemento =
+                document.getElementById("complemento").value.trim();
+
+            const bairro =
+                document.getElementById("bairro").value.trim();
+
+            const cidade =
+                document.getElementById("cidade").value.trim();
+
+            const estado =
+                document.getElementById("estado").value.trim();
+
+
+            let valido = true;
+
+
+            // CEP
+
+            if (cep === "") {
+
+                document.getElementById("erroCep")
+                    .textContent =
+                    "Informe o CEP.";
+
+                valido = false;
+
+            } else if (!/^\d{5}-?\d{3}$/.test(cep)) {
+
+                document.getElementById("erroCep")
+                    .textContent =
+                    "Digite um CEP válido.";
+
+                valido = false;
+
+            }
+
+
+            // RUA
+
+            if (rua === "") {
+
+                document.getElementById("erroRua")
+                    .textContent =
+                    "Informe a rua.";
+
+                valido = false;
+
+            }
+
+
+            // NÚMERO
+
+            if (numero === "") {
+
+                document.getElementById("erroNumero")
+                    .textContent =
+                    "Informe o número.";
+
+                valido = false;
+
+            }
+
+
+            // BAIRRO
+
+            if (bairro === "") {
+
+                document.getElementById("erroBairro")
+                    .textContent =
+                    "Informe o bairro.";
+
+                valido = false;
+
+            }
+
+
+            // CIDADE
+
+            if (cidade === "") {
+
+                document.getElementById("erroCidade")
+                    .textContent =
+                    "Informe a cidade.";
+
+                valido = false;
+
+            }
+
+
+            // ESTADO
+
+            if (estado === "") {
+
+                document.getElementById("erroEstado")
+                    .textContent =
+                    "Informe o estado.";
+
+                valido = false;
+
+            }
+
+
+            // SE TIVER ERRO
+
+            if (!valido) {
+                return;
+            }
+
+
+            // ==================================
+            // SALVAR
+            // ==================================
+
+            const novoEndereco = {
+
+                cep: cep,
+                rua: rua,
+                numero: numero,
+                complemento: complemento,
+                bairro: bairro,
+                cidade: cidade,
+                estado: estado
+
+            };
+
+
+            localStorage.setItem(
+                "endereco",
+                JSON.stringify(novoEndereco)
+            );
+
+
+            alert("Endereço salvo com sucesso!");
+
+
+            if (formEndereco) {
+                formEndereco.style.display = "none";
+            }
+
+
+            mostrarEndereco();
+
+        }
+    );
 
 }
 

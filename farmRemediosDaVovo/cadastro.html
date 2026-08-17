@@ -9,9 +9,22 @@
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <link rel="stylesheet" href="assets/styles/header.css">
     <link rel="stylesheet" href="assets/styles/login.css">
     <link rel="stylesheet" href="assets/styles/footer.css">
+
+    <style>
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 4px;
+            display: block;
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -31,10 +44,15 @@
 
         <div class="pesquisa">
 
-            <input type="text" id="pesquisa" placeholder="Pesquisar produtos">
+            <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar produtos">
 
             <button onclick="pesquisarProduto()">
+
                 <i class="fa-solid fa-magnifying-glass"></i>
+
             </button>
 
         </div>
@@ -42,11 +60,15 @@
         <div class="icones">
 
             <a href="carrinho.html">
+
                 <i class="fa-solid fa-cart-shopping"></i>
+
             </a>
 
             <a href="login.html" id="iconeUsuario">
+
                 <i class="fa-solid fa-user"></i>
+
             </a>
 
         </div>
@@ -60,14 +82,19 @@
 
     <ul>
 
-        <li><a href="index.html">Início</a></li>
+        <li>
+            <a href="index.html">Início</a>
+        </li>
 
-        <li><a href="produtos.html">Produtos</a></li>
+        <li>
+            <a href="produtos.html">Produtos</a>
+        </li>
 
-        <a href="faleConosco.php">Fale Conosco</a>
+        <a href="faleConosco.html">Fale Conosco</a>
 
-        <li><a href="index.html#sobre">Sobre nós</a></li>
-
+        <li>
+            <a href="index.html#sobre">Sobre nós</a>
+        </li>
 
     </ul>
 
@@ -83,7 +110,9 @@
 
 </nav>
 
+
 <!-- CONTEÚDO -->
+
 <main class="page">
 
     <section class="form-card cadastro-card">
@@ -93,13 +122,19 @@
         <div class="form-title">
 
             <div class="title-icon">
+
                 <i class="fa-regular fa-user"></i>
+
                 <span>+</span>
+
             </div>
 
             <div>
+
                 <h2>Criar uma conta</h2>
+
                 <p>Preencha seus dados para começar</p>
+
             </div>
 
         </div>
@@ -110,7 +145,7 @@
         <form id="formCadastro">
 
 
-            <!-- LINHA 1 -->
+            <!-- NOME E NASCIMENTO -->
 
             <div class="form-row">
 
@@ -126,7 +161,13 @@
                                 type="text"
                                 id="nome"
                                 placeholder="Digite seu nome completo">
+
                     </div>
+
+                    <span
+                            class="error"
+                            id="erroNome">
+                    </span>
 
                 </div>
 
@@ -142,8 +183,15 @@
                         <input
                                 type="text"
                                 id="nascimento"
-                                placeholder="DD/MM/AAAA">
+                                placeholder="DD/MM/AAAA"
+                                maxlength="10">
+
                     </div>
+
+                    <span
+                            class="error"
+                            id="erroNascimento">
+                    </span>
 
                 </div>
 
@@ -164,7 +212,13 @@
                             type="email"
                             id="email"
                             placeholder="Digite seu e-mail">
+
                 </div>
+
+                <span
+                        class="error"
+                        id="erroEmail">
+                </span>
 
             </div>
 
@@ -184,8 +238,15 @@
                         <input
                                 type="text"
                                 id="telefone"
-                                placeholder="(31) 99999-9999">
+                                placeholder="(31) 99999-9999"
+                                maxlength="15">
+
                     </div>
+
+                    <span
+                            class="error"
+                            id="erroTelefone">
+                    </span>
 
                 </div>
 
@@ -201,8 +262,15 @@
                         <input
                                 type="text"
                                 id="cpf"
-                                placeholder="000.000.000-00">
+                                placeholder="000.000.000-00"
+                                maxlength="14">
+
                     </div>
+
+                    <span
+                            class="error"
+                            id="erroCpf">
+                    </span>
 
                 </div>
 
@@ -233,6 +301,11 @@
 
                     </div>
 
+                    <span
+                            class="error"
+                            id="erroSenha">
+                    </span>
+
                 </div>
 
 
@@ -256,6 +329,11 @@
 
                     </div>
 
+                    <span
+                            class="error"
+                            id="erroConfirmarSenha">
+                    </span>
+
                 </div>
 
             </div>
@@ -265,13 +343,20 @@
 
             <div class="terms">
 
-                <input type="checkbox" id="terms">
+                <input
+                        type="checkbox"
+                        id="terms">
 
                 <label for="terms">
+
                     Li e aceito os
+
                     <a href="#">Termos de uso</a>
+
                     e a
+
                     <a href="#">Política de privacidade</a>
+
                 </label>
 
             </div>
@@ -279,8 +364,12 @@
 
             <!-- BOTÃO -->
 
-            <button type="submit" class="main-button">
+            <button
+                    type="submit"
+                    class="main-button">
+
                 Cadastrar
+
             </button>
 
 
@@ -299,7 +388,9 @@
 
             <!-- GOOGLE -->
 
-            <button type="button" class="google-button">
+            <button
+                    type="button"
+                    class="google-button">
 
                 <strong>G</strong>
 
@@ -326,6 +417,10 @@
     </section>
 
 </main>
+
+
+<!-- RODAPÉ -->
+
 <footer>
 
     <div class="footerContainer">
@@ -370,6 +465,11 @@
 
 </footer>
 
+
+<!-- ==========================================
+     MOSTRAR / ESCONDER SENHA
+     ========================================== -->
+
 <script>
 
     function mostrarSenha(id, icon) {
@@ -381,6 +481,7 @@
             campo.type = "text";
 
             icon.classList.remove("fa-eye");
+
             icon.classList.add("fa-eye-slash");
 
         } else {
@@ -388,6 +489,7 @@
             campo.type = "password";
 
             icon.classList.remove("fa-eye-slash");
+
             icon.classList.add("fa-eye");
 
         }
@@ -395,73 +497,591 @@
     }
 
 </script>
+
+
+<!-- ==========================================
+     VALIDAÇÕES E MÁSCARAS
+     ========================================== -->
+
 <script>
 
-    const formCadastro = document.getElementById("formCadastro");
+    const formCadastro =
+        document.getElementById("formCadastro");
+
+
+    // ==========================================
+    // DATA DE NASCIMENTO
+    // 14091999 -> 14/09/1999
+    // ==========================================
+
+    const campoNascimento =
+        document.getElementById("nascimento");
+
+
+    campoNascimento.addEventListener("input", function() {
+
+        let valor =
+            campoNascimento.value.replace(/\D/g, "");
+
+
+        valor =
+            valor.substring(0, 8);
+
+
+        if (valor.length > 2) {
+
+            valor =
+                valor.substring(0, 2) +
+                "/" +
+                valor.substring(2);
+
+        }
+
+
+        if (valor.length > 5) {
+
+            valor =
+                valor.substring(0, 5) +
+                "/" +
+                valor.substring(5);
+
+        }
+
+
+        campoNascimento.value = valor;
+
+    });
+
+
+    // ==========================================
+    // TELEFONE
+    // 31999999999 -> (31) 99999-9999
+    // ==========================================
+
+    const campoTelefone =
+        document.getElementById("telefone");
+
+
+    campoTelefone.addEventListener("input", function() {
+
+        let valor =
+            campoTelefone.value.replace(/\D/g, "");
+
+
+        valor =
+            valor.substring(0, 11);
+
+
+        if (valor.length > 0) {
+
+            valor = "(" + valor;
+
+        }
+
+
+        if (valor.length > 3) {
+
+            valor =
+                valor.substring(0, 3) +
+                ") " +
+                valor.substring(3);
+
+        }
+
+
+        if (valor.length > 10) {
+
+            valor =
+                valor.substring(0, 10) +
+                "-" +
+                valor.substring(10);
+
+        }
+
+
+        campoTelefone.value = valor;
+
+    });
+
+
+    // ==========================================
+    // CPF
+    // 12345678900 -> 123.456.789-00
+    // ==========================================
+
+    const campoCPF =
+        document.getElementById("cpf");
+
+
+    campoCPF.addEventListener("input", function() {
+
+        let valor =
+            campoCPF.value.replace(/\D/g, "");
+
+
+        valor =
+            valor.substring(0, 11);
+
+
+        if (valor.length > 3) {
+
+            valor =
+                valor.substring(0, 3) +
+                "." +
+                valor.substring(3);
+
+        }
+
+
+        if (valor.length > 7) {
+
+            valor =
+                valor.substring(0, 7) +
+                "." +
+                valor.substring(7);
+
+        }
+
+
+        if (valor.length > 11) {
+
+            valor =
+                valor.substring(0, 11) +
+                "-" +
+                valor.substring(11);
+
+        }
+
+
+        campoCPF.value = valor;
+
+    });
+
+
+    // ==========================================
+    // MOSTRAR ERRO
+    // ==========================================
+
+    function mostrarErro(id, mensagem) {
+
+        document.getElementById(id).innerHTML =
+            "* " + mensagem;
+
+    }
+
+
+    // ==========================================
+    // LIMPAR ERRO
+    // ==========================================
+
+    function limparErro(id) {
+
+        document.getElementById(id).innerHTML = "";
+
+    }
+
+
+    // ==========================================
+    // ENVIO DO FORMULÁRIO
+    // ==========================================
 
     formCadastro.addEventListener("submit", function(event) {
 
         event.preventDefault();
 
-        const nome = document.getElementById("nome").value.trim();
-        const nascimento = document.getElementById("nascimento").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const telefone = document.getElementById("telefone").value.trim();
-        const cpf = document.getElementById("cpf").value.trim();
-        const senha = document.getElementById("senha").value;
-        const confirmarSenha = document.getElementById("confirmarSenha").value;
-        const termos = document.getElementById("terms").checked;
+
+        const nome =
+            document.getElementById("nome").value.trim();
 
 
-        if (
-            nome === "" ||
-            nascimento === "" ||
-            email === "" ||
-            telefone === "" ||
-            cpf === "" ||
-            senha === "" ||
-            confirmarSenha === ""
-        ) {
-            alert("Preencha todos os campos.");
-            return;
+        const nascimento =
+            document.getElementById("nascimento").value.trim();
+
+
+        const email =
+            document.getElementById("email").value.trim();
+
+
+        const telefone =
+            document.getElementById("telefone").value.trim();
+
+
+        const cpf =
+            document.getElementById("cpf").value.trim();
+
+
+        const senha =
+            document.getElementById("senha").value;
+
+
+        const confirmarSenha =
+            document.getElementById("confirmarSenha").value;
+
+
+        const termos =
+            document.getElementById("terms").checked;
+
+
+        // ==========================================
+        // LIMPA OS ERROS ANTERIORES
+        // ==========================================
+
+        limparErro("erroNome");
+
+        limparErro("erroNascimento");
+
+        limparErro("erroEmail");
+
+        limparErro("erroTelefone");
+
+        limparErro("erroCpf");
+
+        limparErro("erroSenha");
+
+        limparErro("erroConfirmarSenha");
+
+
+        let formularioValido = true;
+
+
+        // ==========================================
+        // NOME
+        // ==========================================
+
+        const regexNome =
+            /^[A-Za-zÀ-ÖØ-öø-ÿ ]+$/;
+
+
+        if (nome === "") {
+
+            mostrarErro(
+                "erroNome",
+                "Nome é obrigatório."
+            );
+
+            formularioValido = false;
+
+        }
+
+        else if (!regexNome.test(nome)) {
+
+            mostrarErro(
+                "erroNome",
+                "Permitido apenas letras e espaços."
+            );
+
+            formularioValido = false;
+
         }
 
 
-        if (senha !== confirmarSenha) {
-            alert("As senhas não são iguais.");
-            return;
+        // ==========================================
+        // DATA
+        // ==========================================
+
+        const regexNascimento =
+            /^\d{2}\/\d{2}\/\d{4}$/;
+
+
+        if (nascimento === "") {
+
+            mostrarErro(
+                "erroNascimento",
+                "Data de nascimento é obrigatória."
+            );
+
+            formularioValido = false;
+
         }
 
+        else if (!regexNascimento.test(nascimento)) {
+
+            mostrarErro(
+                "erroNascimento",
+                "Use o formato DD/MM/AAAA."
+            );
+
+            formularioValido = false;
+
+        }
+
+        else {
+
+            const partes =
+                nascimento.split("/");
+
+
+            const dia =
+                Number(partes[0]);
+
+
+            const mes =
+                Number(partes[1]);
+
+
+            const ano =
+                Number(partes[2]);
+
+
+            const data =
+                new Date(ano, mes - 1, dia);
+
+
+            if (
+                data.getFullYear() !== ano ||
+                data.getMonth() !== mes - 1 ||
+                data.getDate() !== dia
+            ) {
+
+                mostrarErro(
+                    "erroNascimento",
+                    "Digite uma data válida."
+                );
+
+                formularioValido = false;
+
+            }
+
+
+            const anoAtual =
+                new Date().getFullYear();
+
+
+            if (ano < 1900 || ano > anoAtual) {
+
+                mostrarErro(
+                    "erroNascimento",
+                    "Digite um ano válido."
+                );
+
+                formularioValido = false;
+
+            }
+
+        }
+
+
+        // ==========================================
+        // E-MAIL
+        // ==========================================
+
+        const regexEmail =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (email === "") {
+
+            mostrarErro(
+                "erroEmail",
+                "E-mail é obrigatório."
+            );
+
+            formularioValido = false;
+
+        }
+
+        else if (!regexEmail.test(email)) {
+
+            mostrarErro(
+                "erroEmail",
+                "Formato de e-mail inválido."
+            );
+
+            formularioValido = false;
+
+        }
+
+
+        // ==========================================
+        // TELEFONE
+        // ==========================================
+
+        const regexTelefone =
+            /^\(\d{2}\) \d{5}-\d{4}$/;
+
+
+        if (telefone === "") {
+
+            mostrarErro(
+                "erroTelefone",
+                "Telefone é obrigatório."
+            );
+
+            formularioValido = false;
+
+        }
+
+        else if (!regexTelefone.test(telefone)) {
+
+            mostrarErro(
+                "erroTelefone",
+                "Digite um telefone válido."
+            );
+
+            formularioValido = false;
+
+        }
+
+
+        // ==========================================
+        // CPF
+        // ==========================================
+
+        const regexCPF =
+            /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+
+
+        if (cpf === "") {
+
+            mostrarErro(
+                "erroCpf",
+                "CPF é obrigatório."
+            );
+
+            formularioValido = false;
+
+        }
+
+        else if (!regexCPF.test(cpf)) {
+
+            mostrarErro(
+                "erroCpf",
+                "Digite um CPF válido."
+            );
+
+            formularioValido = false;
+
+        }
+
+
+        // ==========================================
+        // SENHA
+        // ==========================================
+
+        if (senha === "") {
+
+            mostrarErro(
+                "erroSenha",
+                "Senha é obrigatória."
+            );
+
+            formularioValido = false;
+
+        }
+
+        else if (senha.length < 6) {
+
+            mostrarErro(
+                "erroSenha",
+                "A senha deve ter pelo menos 6 caracteres."
+            );
+
+            formularioValido = false;
+
+        }
+
+
+        // ==========================================
+        // CONFIRMAR SENHA
+        // ==========================================
+
+        if (confirmarSenha === "") {
+
+            mostrarErro(
+                "erroConfirmarSenha",
+                "Confirmação de senha é obrigatória."
+            );
+
+            formularioValido = false;
+
+        }
+
+        else if (senha !== confirmarSenha) {
+
+            mostrarErro(
+                "erroConfirmarSenha",
+                "As senhas não são iguais."
+            );
+
+            formularioValido = false;
+
+        }
+
+
+        // ==========================================
+        // TERMOS
+        // ==========================================
 
         if (!termos) {
-            alert("Você precisa aceitar os termos de uso.");
-            return;
+
+            alert(
+                "Você precisa aceitar os termos de uso."
+            );
+
+            formularioValido = false;
+
         }
 
+
+        // ==========================================
+        // SE EXISTIR ERRO, PARA AQUI
+        // ==========================================
+
+        if (!formularioValido) {
+
+            return;
+
+        }
+
+
+        // ==========================================
+        // SALVA O USUÁRIO
+        // ==========================================
 
         const usuario = {
 
             nome: nome,
+
             nascimento: nascimento,
+
             email: email,
+
             telefone: telefone,
+
             cpf: cpf,
+
             senha: senha
 
         };
 
 
-        localStorage.setItem("usuario", JSON.stringify(usuario));
+        localStorage.setItem(
+            "usuario",
+            JSON.stringify(usuario)
+        );
 
-        localStorage.setItem("logado", "true");
 
-        alert("Cadastro realizado com sucesso!");
+        localStorage.setItem(
+            "logado",
+            "true"
+        );
 
-        window.location.href = "usuario.html";
+
+        alert(
+            "Cadastro realizado com sucesso!"
+        );
+
+
+        window.location.href =
+            "usuario.html";
 
     });
 
 </script>
+
+
 <script src="assets/scripts/nav.js"></script>
+
 </body>
+
 </html>
