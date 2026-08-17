@@ -1,0 +1,556 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafb;
+    color: #171717;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    padding: 28px 80px 40px;
+}
+
+.container > h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 20px;
+
+    font-size: 17px;
+}
+
+.breadcrumb span {
+    color: #a7cbd0;
+    font-weight: bold;
+}
+
+.breadcrumb i {
+    color: #a7cbd0;
+    font-size: 12px;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.profile-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 28px;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    background: white;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    min-height: 690px;
+}
+
+
+/* PERFIL */
+
+.profile-user {
+    text-align: center;
+    padding: 25px 15px 20px;
+}
+
+.profile-photo {
+    width: 190px;
+    height: 190px;
+
+    margin: 0 auto 15px;
+
+    position: relative;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.camera {
+    position: absolute;
+
+    right: -2px;
+    bottom: 7px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+    border: 4px solid white;
+
+    background: #7a1c23;
+    color: white;
+
+    font-size: 18px;
+}
+
+.profile-user h3 {
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.profile-user p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* MENU */
+
+.sidebar-menu {
+    margin-top: 5px;
+}
+
+.sidebar-menu a {
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 0 28px;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.sidebar-menu a i {
+    width: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.sidebar-menu a.selected {
+    background: #c9e1e5;
+    border-radius: 0 25px 25px 0;
+
+    margin-right: 20px;
+}
+
+.sidebar-menu a.logout {
+    margin-top: 5px;
+}
+
+
+/* =========================
+   ÁREA DOS CARDS
+========================= */
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.card {
+    background: white;
+
+    border: 1px solid #dfdfdf;
+    border-radius: 18px;
+
+    padding: 25px 24px;
+}
+
+
+/* CABEÇALHO DOS CARDS */
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-title h3 {
+    font-size: 20px;
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #d9eef1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #171717;
+    font-size: 21px;
+}
+
+.edit {
+    color: #6a1b20;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-decoration: underline;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edit i {
+    font-size: 13px;
+}
+
+
+/* =========================
+   DADOS PESSOAIS
+========================= */
+
+.personal-card {
+    min-height: 235px;
+}
+
+.personal-info {
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr 1fr;
+
+    padding-left: 65px;
+
+    gap: 30px;
+}
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.info-item span {
+    font-size: 15px;
+}
+
+.info-item strong {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+
+/* =========================
+   ENDEREÇO
+========================= */
+
+.address-card {
+    min-height: 150px;
+}
+
+.address-info {
+    display: grid;
+
+    grid-template-columns: 1.1fr 1fr 1fr;
+
+    padding-left: 65px;
+
+    gap: 30px;
+}
+
+.address-info > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-size: 15px;
+}
+
+.address-info > div:last-child {
+    gap: 5px;
+}
+
+.address-info span {
+    font-size: 15px;
+}
+
+.address-info strong {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+.orders-card {
+    padding-bottom: 10px;
+}
+
+.see-all {
+    color: #6a1b20;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-decoration: underline;
+}
+
+
+/* TABELA */
+
+.orders-table {
+    width: 100%;
+}
+
+.table-head,
+.table-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr
+        1.2fr
+        1fr
+        1fr
+        30px;
+
+    align-items: center;
+}
+
+.table-head {
+    height: 34px;
+
+    background: #c4dfe3;
+
+    border-radius: 8px 8px 0 0;
+
+    padding: 0 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.table-row {
+    min-height: 40px;
+
+    padding: 0 20px;
+
+    border-bottom: 1px solid #dedede;
+
+    font-size: 14px;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-row > i {
+    font-size: 15px;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 85px;
+    height: 26px;
+
+    padding: 0 12px;
+
+    border-radius: 15px;
+
+    background: #dcefd5;
+    border: 1px solid #bddbb4;
+
+    color: #376331;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 1200px) {
+
+    .top-header {
+        padding: 0 30px;
+    }
+
+    .navbar {
+        padding: 0 40px;
+    }
+
+    .nav-links {
+        gap: 35px;
+    }
+
+    .container {
+        padding: 25px 40px;
+    }
+
+    .profile-layout {
+        grid-template-columns: 280px 1fr;
+    }
+
+    .search-box {
+        width: 300px;
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+    .top-header {
+        height: auto;
+        padding: 20px;
+
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo-area h1 {
+        font-size: 25px;
+    }
+
+    .logo {
+        width: 90px;
+        height: 90px;
+        font-size: 45px;
+    }
+
+    .logo .plus {
+        top: 38px;
+        left: 34px;
+        font-size: 22px;
+    }
+
+    .header-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 20px;
+
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .account-text {
+        text-align: center;
+    }
+
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        min-height: auto;
+    }
+
+    .personal-info,
+    .address-info {
+        padding-left: 0;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .header-right {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .personal-info,
+    .address-info {
+        grid-template-columns: 1fr;
+    }
+
+    .table-head {
+        display: none;
+    }
+
+    .table-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .table-row > i {
+        display: none;
+    }
+
+}

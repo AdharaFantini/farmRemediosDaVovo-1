@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remédios da Vovó</title>
+
+   <link rel="stylesheet" href="assets/styles/header.css">
+<link rel="stylesheet" href="assets/styles/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+
+
+<body>
+
+<header>
+
+    <div class="topo">
+
+        <div class="logo">
+
+            <img src="assets/img/logo.jpg" alt="Logo">
+
+            <h1>Remédios da vovó</h1>
+
+        </div>
+
+         <div class="pesquisa">
+          
+         <input type="text" id="pesquisa" placeholder="Pesquisar produtos">
+          
+          <button onclick="pesquisarProduto()">
+    <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+          
+        </div>
+
+        <div class="icones">
+
+    <a href="carrinho.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+            <a href="login.html" id="iconeUsuario">
+                <i class="fa-solid fa-user"></i>
+            </a>
+    
+</div>
+
+    </div>
+
+</header>
+
+
+<nav>
+
+    <ul>
+
+        <li><a href="index.html">Início</a></li>
+
+        <li><a href="produtos.html">Produtos</a></li>
+
+        <a href="faleConosco.html">Fale Conosco</a>
+
+        <li><a href="index.html#sobre">Sobre nós</a></li>
+
+
+    </ul>
+
+    <div class="login">
+
+        <span>Seja bem vindo(a),</span>
+
+        <a href="login.html" id="linkUsuario">
+            Entre ou Cadastre-se
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="banner">
+
+    <button class="seta esquerda">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <img id="banner" src="assets/img/banner1.jpg" alt="Banner">
+
+    <button class="seta direita">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
+
+</section>
+
+<section class="cards">
+
+    <div class="card" onclick="location.href='login.html'">
+
+        <i class="fa-solid fa-user"></i>
+
+        <h2>Área do cliente</h2>
+
+        <p>Acesse ou cadastre</p>
+
+    </div>
+
+
+    <div class="card" onclick="location.href='tel:0000000000'">
+
+        <i class="fa-solid fa-headset"></i>
+
+        <h2>Atendimento por telefone</h2>
+
+        <p>000.0000-00</p>
+
+    </div>
+
+
+    <div class="card" onclick="window.open('https://wa.me/5531999999999', '_blank')">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <h2>Whatsapp</h2>
+
+        <p>(31) 99999-9999</p>
+
+    </div>
+
+
+    <div class="card" onclick="location.href='faleConosco.html'">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <h2>Fale conosco</h2>
+
+        <p>Entre em contato</p>
+
+    </div>
+
+</section>
+
+<section class="produtos">
+
+    <h2>Mais procurados</h2>
+
+    <div class="lista-produtos">
+
+        <div class="produto" onclick="location.href='produto.html?id=dipirona'">
+
+    <img src="assets/img/dipirona.png" alt="Dipirona">
+
+    <h3>Dipirona Monoidratada</h3>
+
+    <span class="preco">R$20,00</span>
+
+</div>
+
+        <div class="produto" onclick="location.href='produto.html?id=hidratante'">
+
+            <img src="assets/img/hidratante.png" alt="Hidratante">
+
+            <h3>Hidratante corporal</h3>
+
+            <span class="preco">R$24,90</span>
+
+        </div>
+
+        <div class="produto" onclick="location.href='produto.html?id=protetor'">
+
+            <img src="assets/img/protetor.png" alt="Protetor">
+
+            <h3>Protetor Solar FPS 60</h3>
+
+            <span class="preco">R$39,90</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="sobre" id="sobre">
+
+    <div class="titulo">
+
+        <h2>Sobre nós</h2>
+
+    </div>
+
+    <div class="texto">
+
+        <p>
+
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Quisquam fugiat deserunt atque magni autem, dignissimos
+            aspernatur cumque officia libero temporibus minima illo
+            voluptate incidunt, quas labore pariatur exercitationem
+            repudiandae. Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Quidem numquam maiores nemo repellendus
+            unde quae perspiciatis dolore praesentium omnis suscipit.
+
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footerContainer">
+
+        <div>
+
+            <h3>Remédios da Vovó</h3>
+
+            <p>
+                Qualidade, confiança e cuidado com a sua saúde.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Contato</h3>
+
+            <p>(11) 99999-9999</p>
+
+            <p>contato@remediosdavovo.com.br</p>
+
+        </div>
+
+        <div>
+
+            <h3>Horário</h3>
+
+            <p>Segunda a Sexta</p>
+
+            <p>08:00 às 18:00</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 Remédios da Vovó - Todos os direitos reservados.
+
+    </div>
+
+</footer>
+
+<button id="voltarTopo">
+    ↑
+</button>
+
+<script src="assets/scripts/index.js"></script>
+<script src="assets/scripts/nav.js"></script>
+</body>
+
+</html>

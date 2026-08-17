@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Produtos - Remédios da Vovó</title>
+
+<link rel="stylesheet" href="assets/styles/header.css">
+<link rel="stylesheet" href="assets/styles/styleprod.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<button id="voltarTopo">
+    ↑
+</button>
+<script>
+    const botaoTopo = document.getElementById("voltarTopo");
+    
+    botaoTopo.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+</script>
+
+<body>
+
+<header>
+    
+    <div class="topo">
+        
+        <div class="logo">
+            
+            <img src="assets/img/logo.jpg" alt="Logo">
+            
+            <h1>Remédios da vovó</h1>
+            
+        </div>
+        
+        <div class="pesquisa">
+            
+            <input type="text" placeholder="Pesquisar produtos">
+            
+            <button>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            
+        </div>
+        
+        <div class="icones">
+    
+    <a href="carrinho.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+            <a href="login.html" id="iconeUsuario">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+    
+</div>
+        
+    </div>
+    
+</header>
+
+
+<nav>
+    
+    <ul>
+        
+        <li><a href="index.html">Início</a></li>
+        
+        <li><a href="produtos.html">Produtos</a></li>
+        
+        <a href="faleConosco.html">Fale Conosco</a>
+        
+       <li><a href="index.html#sobre">Sobre nós</a></li>
+        
+
+        
+    </ul>
+    <div class="login">
+
+        <span>Seja bem vindo(a),</span>
+
+        <a href="login.html" id="linkUsuario">
+            Entre ou Cadastre-se
+        </a>
+
+    </div>
+    
+</nav>
+
+
+
+<main>
+
+
+<!-- CATEGORIAS -->
+
+<aside>
+
+<h2>Categorias</h2>
+
+<ul>
+
+<li>
+<button class="categoria ativo" data-categoria="todos">
+Todos
+</button>
+</li>
+
+
+<li>
+<button class="categoria" data-categoria="medicamentos">
+Medicamentos
+</button>
+</li>
+
+
+<li>
+<button class="categoria" data-categoria="infantil">
+Infantil
+</button>
+</li>
+
+
+<li>
+<button class="categoria" data-categoria="vitaminas">
+Vitaminas
+</button>
+</li>
+
+
+<li>
+<button class="categoria" data-categoria="beleza">
+Beleza e Cuidados
+</button>
+</li>
+
+
+</ul>
+
+</aside>
+
+
+
+<section class="conteudo">
+
+
+<div class="cabecalhoConteudo">
+
+<h2>Produtos</h2>
+
+<span id="contador">
+6 produtos
+</span>
+
+</div>
+
+
+
+<div class="gridProdutos">
+
+
+
+<!-- PRODUTO 1 -->
+
+<div class="produto" data-categoria="medicamentos" data-id="dipirona">
+    
+    <div class="imagem">
+        <img src="assets/img/dipirona.png" alt="Dipirona">
+    </div>
+    
+    <div class="info">
+        
+        <span class="categoriaProduto">
+            Medicamentos
+        </span>
+        
+        <h3>
+            Dipirona Monoidratada
+        </h3>
+        
+        <p>
+            Analgésico e antitérmico.
+        </p>
+        
+        <div class="rodapeCard">
+            
+            <span class="preco">
+                R$ 20,00
+            </span>
+            
+            <a href="#" class="botao">
+                Ver Produto
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+<!-- PRODUTO 2 -->
+
+<div class="produto" data-categoria="medicamentos" data-id="paracetamol">
+    
+    <div class="imagem">
+        <img src="assets/img/paracetamol.png" alt="Paracetamol">
+    </div>
+    
+    <div class="info">
+        
+        <span class="categoriaProduto">
+            Medicamentos
+        </span>
+        
+        <h3>
+            Paracetamol
+        </h3>
+        
+        <p>
+            Analgésico e antitérmico.
+        </p>
+        
+        <div class="rodapeCard">
+            
+            <span class="preco">
+                R$ 16,90
+            </span>
+            
+            <a href="#" class="botao">
+                Ver Produto
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+
+<!-- PRODUTO 3 -->
+
+<div class="produto" data-categoria="infantil" data-id="xarope">
+    
+    <div class="imagem">
+        <img src="assets/img/xarope.png" alt="Xarope">
+    </div>
+    
+    <div class="info">
+        
+        <span class="categoriaProduto">
+            Infantil
+        </span>
+        
+        <h3>
+            Xarope Infantil
+        </h3>
+        
+        <p>
+            Alívio da tosse infantil.
+        </p>
+        
+        <div class="rodapeCard">
+            
+            <span class="preco">
+                R$ 18,90
+            </span>
+            
+            <a href="#" class="botao">
+                Ver Produto
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+
+<!-- PRODUTO 4 -->
+
+<div class="produto" data-categoria="vitaminas" data-id="vitamina-c">
+    
+    <div class="imagem">
+        <img src="assets/img/vitaminaC.png" alt="Vitamina C">
+    </div>
+    
+    <div class="info">
+        
+        <span class="categoriaProduto">
+            Vitaminas
+        </span>
+        
+        <h3>
+            Vitamina C 1g
+        </h3>
+        
+        <p>
+            Auxilia no fortalecimento da imunidade.
+        </p>
+        
+        <div class="rodapeCard">
+            
+            <span class="preco">
+                R$ 27,50
+            </span>
+            
+            <a href="#" class="botao">
+                Ver Produto
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+
+<!-- PRODUTO 5 -->
+
+<div class="produto" data-categoria="beleza" data-id="protetor">
+    
+    <div class="imagem">
+        <img src="assets/img/protetor.png" alt="Protetor Solar">
+    </div>
+    
+    <div class="info">
+        
+        <span class="categoriaProduto">
+            Beleza e Cuidados
+        </span>
+        
+        <h3>
+            Protetor Solar FPS 60
+        </h3>
+        
+        <p>
+            Proteção diária contra os raios UVA e UVB.
+        </p>
+        
+        <div class="rodapeCard">
+            
+            <span class="preco">
+                R$ 39,90
+            </span>
+            
+            <a href="#" class="botao">
+                Ver Produto
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+
+
+
+<!-- PRODUTO 6 -->
+
+<div class="produto" data-categoria="beleza" data-id="hidratante">
+    
+    <div class="imagem">
+        <img src="assets/img/hidratante.png" alt="Hidratante">
+    </div>
+    
+    <div class="info">
+        
+        <span class="categoriaProduto">
+            Beleza e Cuidados
+        </span>
+        
+        <h3>
+            Hidratante Corporal
+        </h3>
+        
+        <p>
+            Hidratação intensa para todos os tipos de pele.
+        </p>
+        
+        <div class="rodapeCard">
+            
+            <span class="preco">
+                R$ 24,90
+            </span>
+            
+            <a href="#" class="botao">
+                Ver Produto
+            </a>
+            
+        </div>
+        
+    </div>
+    
+</div>
+
+</section>
+
+
+</main>
+<footer>
+    
+    <div class="footerContainer">
+        
+        <div>
+            
+            <h3>Remédios da Vovó</h3>
+            
+            <p>
+                Qualidade, confiança e cuidado com a sua saúde.
+            </p>
+            
+        </div>
+        
+        <div>
+            
+            <h3>Contato</h3>
+            
+            <p>(11) 99999-9999</p>
+            
+            <p>contato@remediosdavovo.com.br</p>
+            
+        </div>
+        
+        <div>
+            
+            <h3>Horário</h3>
+            
+            <p>Segunda a Sexta</p>
+            
+            <p>08:00 às 18:00</p>
+            
+        </div>
+        
+    </div>
+    
+    <div class="copyright">
+        
+        © 2026 Remédios da Vovó - Todos os direitos reservados.
+        
+    </div>
+    
+</footer>
+
+
+<script src="assets/scripts/scriptprod.js"></script>
+
+<script src="assets/scripts/nav.js"></script>
+</body>
+
+</html>

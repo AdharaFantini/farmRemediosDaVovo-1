@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Remédios da Vovó</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="assets/styles/login.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+<header>
+
+    <div class="topo">
+
+        <div class="logo">
+
+            <img src="assets/img/logo.jpg" alt="Logo">
+
+            <h1>Remédios da vovó</h1>
+
+        </div>
+
+        <div class="pesquisa">
+
+            <input type="text" id="pesquisa" placeholder="Pesquisar produtos">
+
+            <button onclick="pesquisarProduto()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+        <div class="icones">
+
+            <a href="carrinho.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+
+            <a href="login.html" id="iconeUsuario">
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<nav>
+
+    <ul>
+
+        <li><a href="index.html">Início</a></li>
+
+        <li><a href="produtos.html">Produtos</a></li>
+
+        <a href="faleConosco.html">Fale Conosco</a>
+
+        <li><a href="index.html#sobre">Sobre nós</a></li>
+
+
+    </ul>
+
+    <div class="login">
+
+        <span>Seja bem vindo(a),</span>
+
+        <a href="login.html" id="linkUsuario">
+            Entre ou Cadastre-se
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- CONTEÚDO -->
+<main class="page">
+
+    <section class="form-card login-card">
+
+        <!-- TÍTULO -->
+
+        <div class="form-title">
+
+            <div class="title-icon login-icon">
+                <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+
+            <div>
+
+                <h2>Entrar na sua conta</h2>
+
+                <p>Que bom ter você de volta!</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMULÁRIO -->
+
+        <form id="formLogin">
+
+
+            <!-- EMAIL -->
+
+            <div class="field full">
+
+                <label>E-mail</label>
+
+                <div class="input-box">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Digite seu e-mail">
+                </div>
+
+            </div>
+
+
+            <!-- SENHA -->
+
+            <div class="field full">
+
+                <label>Senha</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                            type="password"
+                            id="loginSenha"
+                            placeholder="Digite sua senha">
+
+                    <i
+                            class="fa-regular fa-eye password-eye"
+                            onclick="mostrarSenha('loginSenha', this)">
+                    </i>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEMBRAR / ESQUECI -->
+
+            <div class="login-options">
+
+                <label class="remember">
+
+                    <input type="checkbox">
+
+                    <span>Lembrar meus dados</span>
+
+                </label>
+
+
+                <a href="#">
+                    Esqueci minha senha
+                </a>
+
+            </div>
+
+
+            <!-- ENTRAR -->
+
+            <button type="submit" class="main-button">
+                Entrar
+            </button>
+
+
+            <!-- OU -->
+
+            <div class="divider">
+
+                <span></span>
+
+                <p>ou</p>
+
+                <span></span>
+
+            </div>
+
+
+            <!-- GOOGLE -->
+
+            <button type="button" class="google-button">
+
+                <strong>G</strong>
+
+                <span>Entrar com Google</span>
+
+            </button>
+
+
+            <!-- CADASTRO -->
+
+            <p class="bottom-text">
+
+                Ainda não tem uma conta?
+
+                <a href="cadastro.html">
+                    Cadastre-se
+                </a>
+
+            </p>
+
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footerContainer">
+
+        <div>
+
+            <h3>Remédios da Vovó</h3>
+
+            <p>
+                Qualidade, confiança e cuidado com a sua saúde.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Contato</h3>
+
+            <p>(11) 99999-9999</p>
+
+            <p>contato@remediosdavovo.com.br</p>
+
+        </div>
+
+        <div>
+
+            <h3>Horário</h3>
+
+            <p>Segunda a Sexta</p>
+
+            <p>08:00 às 18:00</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 Remédios da Vovó - Todos os direitos reservados.
+
+    </div>
+
+</footer>
+<script>
+
+    function mostrarSenha(id, icon) {
+
+        const campo = document.getElementById(id);
+
+        if (campo.type === "password") {
+
+            campo.type = "text";
+
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+
+        } else {
+
+            campo.type = "password";
+
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+
+        }
+
+    }
+
+
+</script>
+<script>
+
+    const formLogin = document.getElementById("formLogin");
+
+    formLogin.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const email = document.getElementById("loginEmail").value.trim();
+        const senha = document.getElementById("loginSenha").value;
+
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+
+        // Se não existe cadastro
+        if (!usuario) {
+
+            alert("Nenhuma conta cadastrada. Faça seu cadastro primeiro.");
+
+            return;
+        }
+
+
+        // Verifica e-mail e senha
+        if (email === usuario.email && senha === usuario.senha) {
+
+            localStorage.setItem("logado", "true");
+
+            alert("Login realizado com sucesso!");
+
+            window.location.href = "usuario.html";
+
+        } else {
+
+            alert("E-mail ou senha incorretos.");
+
+        }
+
+    });
+
+</script>
+<script src="assets/scripts/nav.js"></script>
+</body>
+</html>
