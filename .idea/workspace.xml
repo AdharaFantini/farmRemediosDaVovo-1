@@ -53,6 +53,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\11463417\Documents\GitHub\farmRemediosDaVovo\farmRemediosDaVovo\farmRemediosDaVovo" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -69,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1786964687999</updated>
       <workItem from="1786964689663" duration="3903000" />
-      <workItem from="1786968662640" duration="4961000" />
+      <workItem from="1786968662640" duration="5594000" />
     </task>
     <servers />
   </component>
