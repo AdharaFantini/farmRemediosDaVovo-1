@@ -1,3 +1,145 @@
+<?php
+
+session_start();
+
+/* ==========================
+   CARREGA ENDEREÇO SALVO
+========================== */
+
+$endereco = $_SESSION["endereco"] ?? [];
+
+$cep = $endereco["cep"] ?? "";
+$rua = $endereco["rua"] ?? "";
+$numero = $endereco["numero"] ?? "";
+$complemento = $endereco["complemento"] ?? "";
+$bairro = $endereco["bairro"] ?? "";
+$cidade = $endereco["cidade"] ?? "";
+$estado = $endereco["estado"] ?? "";
+
+$erros = [];
+
+
+/* ==========================
+   RECEBE O FORMULÁRIO
+========================== */
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $cep = trim($_POST["cep"] ?? "");
+    $rua = trim($_POST["rua"] ?? "");
+    $numero = trim($_POST["numero"] ?? "");
+    $complemento = trim($_POST["complemento"] ?? "");
+    $bairro = trim($_POST["bairro"] ?? "");
+    $cidade = trim($_POST["cidade"] ?? "");
+    $estado = trim($_POST["estado"] ?? "");
+
+
+    /* ==========================
+       VALIDA CEP
+    ========================== */
+
+    if (empty($cep)) {
+
+        $erros["cep"] = "O CEP é obrigatório.";
+
+    } elseif (!preg_match("/^[0-9]{5}-?[0-9]{3}$/", $cep)) {
+
+        $erros["cep"] = "Digite um CEP válido.";
+
+    }
+
+
+    /* ==========================
+       VALIDA RUA
+    ========================== */
+
+    if (empty($rua)) {
+
+        $erros["rua"] = "A rua é obrigatória.";
+
+    }
+
+
+    /* ==========================
+       VALIDA NÚMERO
+    ========================== */
+
+    if (empty($numero)) {
+
+        $erros["numero"] = "O número é obrigatório.";
+
+    }
+
+
+    /* ==========================
+       VALIDA BAIRRO
+    ========================== */
+
+    if (empty($bairro)) {
+
+        $erros["bairro"] = "O bairro é obrigatório.";
+
+    }
+
+
+    /* ==========================
+       VALIDA CIDADE
+    ========================== */
+
+    if (empty($cidade)) {
+
+        $erros["cidade"] = "A cidade é obrigatória.";
+
+    }
+
+
+    /* ==========================
+       VALIDA ESTADO
+    ========================== */
+
+    if (empty($estado)) {
+
+        $erros["estado"] = "O estado é obrigatório.";
+
+    } elseif (!preg_match("/^[A-Za-z]{2}$/", $estado)) {
+
+        $erros["estado"] = "Digite a sigla do estado. Ex.: SP.";
+
+    }
+
+
+    /* ==========================
+       SALVA O ENDEREÇO
+    ========================== */
+
+    if (empty($erros)) {
+
+        $_SESSION["endereco"] = [
+
+                "cep" => $cep,
+                "rua" => $rua,
+                "numero" => $numero,
+                "complemento" => $complemento,
+                "bairro" => $bairro,
+                "cidade" => $cidade,
+                "estado" => strtoupper($estado)
+
+        ];
+
+
+        echo "<script>
+
+            alert('Endereço cadastrado com sucesso!');
+
+            window.location.href = 'usuario.php#endereco';
+
+        </script>";
+
+        exit;
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -263,11 +405,44 @@
 
                 <div class="address-info" id="enderecoInfo">
 
-                    <p>Nenhum endereço cadastrado.</p>
+                    <?php if (!empty($cep)): ?>
 
-                    <button type="button" id="botaoAdicionarEndereco">
-                        Adicionar endereço
-                    </button>
+                        <p><strong>CEP:</strong> <?= htmlspecialchars($cep) ?></p>
+
+                        <p>
+                            <strong>Endereço:</strong>
+                            <?= htmlspecialchars($rua) ?>,
+                            <?= htmlspecialchars($numero) ?>
+                        </p>
+
+                        <?php if (!empty($complemento)): ?>
+                            <p>
+                                <strong>Complemento:</strong>
+                                <?= htmlspecialchars($complemento) ?>
+                            </p>
+                        <?php endif; ?>
+
+                        <p>
+                            <strong>Bairro:</strong>
+                            <?= htmlspecialchars($bairro) ?>
+                        </p>
+
+                        <p>
+                            <strong>Cidade:</strong>
+                            <?= htmlspecialchars($cidade) ?>
+                            -
+                            <?= htmlspecialchars($estado) ?>
+                        </p>
+
+                    <?php else: ?>
+
+                        <p>Nenhum endereço cadastrado.</p>
+
+                        <button type="button" id="botaoAdicionarEndereco">
+                            Adicionar endereço
+                        </button>
+
+                    <?php endif; ?>
 
                 </div>
 
@@ -276,7 +451,7 @@
 
                 <div id="formEndereco" class="form-endereco" style="display: none;">
 
-                    <form action="endereco.php" method="POST">
+                    <form action="usuario.php" method="POST">
 
 
                         <!-- CEP -->
@@ -541,44 +716,6 @@
     </div>
 
 </footer>
-
-
-
-<script>
-
-    const endereco = {
-
-        cep: <?= json_encode($cep) ?>,
-
-    rua: <?= json_encode($rua) ?>,
-
-    numero: <?= json_encode($numero) ?>,
-
-    complemento: <?= json_encode($complemento) ?>,
-
-    bairro: <?= json_encode($bairro) ?>,
-
-    cidade: <?= json_encode($cidade) ?>,
-
-    estado: <?= json_encode($estado) ?>
-
-    };
-
-
-    localStorage.setItem(
-        "endereco",
-        JSON.stringify(endereco)
-    );
-
-
-    alert("Endereço cadastrado com sucesso!");
-
-
-    window.location.href = "usuario.html#endereco";
-
-</script>
-
-
 
 </body>
 </html>
