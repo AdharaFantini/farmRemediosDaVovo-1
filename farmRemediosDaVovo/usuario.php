@@ -1,144 +1,5 @@
 <?php
-
 session_start();
-
-/* ==========================
-   CARREGA ENDEREÇO SALVO
-========================== */
-
-$endereco = $_SESSION["endereco"] ?? [];
-
-$cep = $endereco["cep"] ?? "";
-$rua = $endereco["rua"] ?? "";
-$numero = $endereco["numero"] ?? "";
-$complemento = $endereco["complemento"] ?? "";
-$bairro = $endereco["bairro"] ?? "";
-$cidade = $endereco["cidade"] ?? "";
-$estado = $endereco["estado"] ?? "";
-
-$erros = [];
-
-
-/* ==========================
-   RECEBE O FORMULÁRIO
-========================== */
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    $cep = trim($_POST["cep"] ?? "");
-    $rua = trim($_POST["rua"] ?? "");
-    $numero = trim($_POST["numero"] ?? "");
-    $complemento = trim($_POST["complemento"] ?? "");
-    $bairro = trim($_POST["bairro"] ?? "");
-    $cidade = trim($_POST["cidade"] ?? "");
-    $estado = trim($_POST["estado"] ?? "");
-
-
-    /* ==========================
-       VALIDA CEP
-    ========================== */
-
-    if (empty($cep)) {
-
-        $erros["cep"] = "O CEP é obrigatório.";
-
-    } elseif (!preg_match("/^[0-9]{5}-?[0-9]{3}$/", $cep)) {
-
-        $erros["cep"] = "Digite um CEP válido.";
-
-    }
-
-
-    /* ==========================
-       VALIDA RUA
-    ========================== */
-
-    if (empty($rua)) {
-
-        $erros["rua"] = "A rua é obrigatória.";
-
-    }
-
-
-    /* ==========================
-       VALIDA NÚMERO
-    ========================== */
-
-    if (empty($numero)) {
-
-        $erros["numero"] = "O número é obrigatório.";
-
-    }
-
-
-    /* ==========================
-       VALIDA BAIRRO
-    ========================== */
-
-    if (empty($bairro)) {
-
-        $erros["bairro"] = "O bairro é obrigatório.";
-
-    }
-
-
-    /* ==========================
-       VALIDA CIDADE
-    ========================== */
-
-    if (empty($cidade)) {
-
-        $erros["cidade"] = "A cidade é obrigatória.";
-
-    }
-
-
-    /* ==========================
-       VALIDA ESTADO
-    ========================== */
-
-    if (empty($estado)) {
-
-        $erros["estado"] = "O estado é obrigatório.";
-
-    } elseif (!preg_match("/^[A-Za-z]{2}$/", $estado)) {
-
-        $erros["estado"] = "Digite a sigla do estado. Ex.: SP.";
-
-    }
-
-
-    /* ==========================
-       SALVA O ENDEREÇO
-    ========================== */
-
-    if (empty($erros)) {
-
-        $_SESSION["endereco"] = [
-
-                "cep" => $cep,
-                "rua" => $rua,
-                "numero" => $numero,
-                "complemento" => $complemento,
-                "bairro" => $bairro,
-                "cidade" => $cidade,
-                "estado" => strtoupper($estado)
-
-        ];
-
-
-        echo "<script>
-
-            alert('Endereço cadastrado com sucesso!');
-
-            window.location.href = 'usuario.php#endereco';
-
-        </script>";
-
-        exit;
-    }
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -152,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="assets/styles/header.css">
-    <link rel="stylesheet" href="assets/styles/endereco.css">
     <link rel="stylesheet" href="assets/styles/usuario.css">
     <link rel="stylesheet" href="assets/styles/footer.css">
 </head>
@@ -184,11 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <div class="icones">
 
-            <a href="carrinho.html">
+            <a href="carrinho.php">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
 
-            <a href="login.html" id="iconeUsuario">
+            <a href="login.php" id="iconeUsuario">
                 <i class="fa-solid fa-user"></i>
             </a>
 
@@ -203,13 +63,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <ul>
 
-        <li><a href="index.html">Início</a></li>
+        <li><a href="index.php">Início</a></li>
 
-        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="produtos.php">Produtos</a></li>
 
         <a href="faleConosco.php">Fale Conosco</a>
 
-        <li><a href="index.html#sobre">Sobre nós</a></li>
+        <li><a href="index.php#sobre">Sobre nós</a></li>
 
 
     </ul>
@@ -218,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         <span>Seja bem vindo(a),</span>
 
-        <a href="login.html" id="linkUsuario">
+        <a href="login.php" id="linkUsuario">
             Entre ou Cadastre-se
         </a>
 
@@ -377,8 +237,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
 
 
-            <!-- ================= ENDEREÇO ================= -->
-
+            <!-- ENDEREÇO -->
+            <!-- ENDEREÇO -->
             <div class="card address-card" id="endereco">
 
                 <div class="card-header">
@@ -393,195 +253,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                     </div>
 
-                    <a href="#" class="edit" id="editarEndereco">
+                    <a href="#" class="edit">
                         Editar
                         <i class="fa-solid fa-pencil"></i>
                     </a>
 
                 </div>
 
-
-                <!-- ENDEREÇO SALVO -->
-
                 <div class="address-info" id="enderecoInfo">
 
-                    <?php if (!empty($cep)): ?>
-
-                        <p><strong>CEP:</strong> <?= htmlspecialchars($cep) ?></p>
-
-                        <p>
-                            <strong>Endereço:</strong>
-                            <?= htmlspecialchars($rua) ?>,
-                            <?= htmlspecialchars($numero) ?>
-                        </p>
-
-                        <?php if (!empty($complemento)): ?>
-                            <p>
-                                <strong>Complemento:</strong>
-                                <?= htmlspecialchars($complemento) ?>
-                            </p>
-                        <?php endif; ?>
-
-                        <p>
-                            <strong>Bairro:</strong>
-                            <?= htmlspecialchars($bairro) ?>
-                        </p>
-
-                        <p>
-                            <strong>Cidade:</strong>
-                            <?= htmlspecialchars($cidade) ?>
-                            -
-                            <?= htmlspecialchars($estado) ?>
-                        </p>
-
-                    <?php else: ?>
-
-                        <p>Nenhum endereço cadastrado.</p>
-
-                        <button type="button" id="botaoAdicionarEndereco">
-                            Adicionar endereço
-                        </button>
-
-                    <?php endif; ?>
-
-                </div>
-
-
-                <!-- FORMULÁRIO -->
-
-                <div id="formEndereco" class="form-endereco" style="display: none;">
-
-                    <form action="usuario.php" method="POST">
-
-
-                        <!-- CEP -->
-
-                        <div class="campo-endereco">
-
-                            <label for="cep">CEP</label>
-
-                            <input
-                                    type="text"
-                                    id="cep"
-                                    name="cep"
-                                    placeholder="00000-000">
-
-                            <span class="erro" id="erroCep"></span>
-
-                        </div>
-
-
-                        <!-- RUA -->
-
-                        <div class="campo-endereco">
-
-                            <label for="rua">Rua</label>
-
-                            <input
-                                    type="text"
-                                    id="rua"
-                                    name="rua"
-                                    placeholder="Digite sua rua">
-
-                            <span class="erro" id="erroRua"></span>
-
-                        </div>
-
-
-                        <!-- NÚMERO -->
-
-                        <div class="campo-endereco">
-
-                            <label for="numero">Número</label>
-
-                            <input
-                                    type="text"
-                                    id="numero"
-                                    name="numero"
-                                    placeholder="Número da residência">
-
-                            <span class="erro" id="erroNumero"></span>
-
-                        </div>
-
-
-                        <!-- COMPLEMENTO -->
-
-                        <div class="campo-endereco">
-
-                            <label for="complemento">Complemento</label>
-
-                            <input
-                                    type="text"
-                                    id="complemento"
-                                    name="complemento"
-                                    placeholder="Apartamento, casa, bloco...">
-
-                            <span class="erro" id="erroComplemento"></span>
-
-                        </div>
-
-
-                        <!-- BAIRRO -->
-
-                        <div class="campo-endereco">
-
-                            <label for="bairro">Bairro</label>
-
-                            <input
-                                    type="text"
-                                    id="bairro"
-                                    name="bairro"
-                                    placeholder="Digite seu bairro">
-
-                            <span class="erro" id="erroBairro"></span>
-
-                        </div>
-
-
-                        <!-- CIDADE -->
-
-                        <div class="campo-endereco">
-
-                            <label for="cidade">Cidade</label>
-
-                            <input
-                                    type="text"
-                                    id="cidade"
-                                    name="cidade"
-                                    placeholder="Digite sua cidade">
-
-                            <span class="erro" id="erroCidade"></span>
-
-                        </div>
-
-
-                        <!-- ESTADO -->
-
-                        <div class="campo-endereco">
-
-                            <label for="estado">Estado</label>
-
-                            <input
-                                    type="text"
-                                    id="estado"
-                                    name="estado"
-                                    placeholder="Ex.: SP">
-
-                            <span class="erro" id="erroEstado"></span>
-
-                        </div>
-
-
-                        <button
-                                type="submit"
-                                class="botao-endereco">
-
-                            Salvar endereço
-
-                        </button>
-
-                    </form>
+                    <p>Nenhum endereço cadastrado.</p>
 
                 </div>
 
@@ -716,7 +397,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
 
 </footer>
+<script src="assets/scripts/usuario.js"></script>
+<script src="assets/scripts/nav.js"></script>
+
 
 </body>
 </html>
-
