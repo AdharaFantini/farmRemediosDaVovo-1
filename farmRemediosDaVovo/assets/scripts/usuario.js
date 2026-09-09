@@ -9,7 +9,7 @@ const logado = localStorage.getItem("logado");
 // Se não estiver logado, volta para o login
 if (!usuario || logado !== "true") {
 
-    window.location.href = "login.html";
+    window.location.href = "login.php";
 
 }
 
@@ -557,7 +557,7 @@ if (botaoSair) {
 
         alert("Você saiu da conta!");
 
-        window.location.href = "index.html";
+        window.location.href = "index.php";
 
     });
 

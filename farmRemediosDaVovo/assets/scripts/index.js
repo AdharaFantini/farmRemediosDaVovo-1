@@ -53,7 +53,7 @@ function pesquisarProduto() {
 
     if (texto !== "") {
         window.location.href =
-            "produtos.html?pesquisa=" + encodeURIComponent(texto);
+            "produtos.php?pesquisa=" + encodeURIComponent(texto);
     }
 
 }

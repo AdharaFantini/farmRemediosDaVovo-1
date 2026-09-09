@@ -18,11 +18,11 @@ function atualizarUsuario() {
     if (usuario && logado === "true") {
 
         if (iconeUsuario) {
-            iconeUsuario.href = "usuario.html";
+            iconeUsuario.href = "usuario.php";
         }
 
         if (linkUsuario) {
-            linkUsuario.href = "usuario.html";
+            linkUsuario.href = "usuario.php";
             linkUsuario.textContent = usuario.nome;
         }
 
@@ -36,11 +36,11 @@ function atualizarUsuario() {
     else {
 
         if (iconeUsuario) {
-            iconeUsuario.href = "login.html";
+            iconeUsuario.href = "login.php";
         }
 
         if (linkUsuario) {
-            linkUsuario.href = "login.html";
+            linkUsuario.href = "login.php";
             linkUsuario.textContent = "Entre ou Cadastre-se";
         }
 

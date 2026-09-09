@@ -21,7 +21,7 @@ function finalizarCompra() {
 
     alert("Faça login para finalizar a compra.");
 
-    window.location.href = "login.html";
+    window.location.href = "login.php";
 
     return;
   }
@@ -36,7 +36,7 @@ function finalizarCompra() {
 
     alert("Seu carrinho está vazio.");
 
-    window.location.href = "carrinho.html";
+    window.location.href = "carrinho.php";
 
     return;
   }
@@ -102,7 +102,7 @@ function finalizarCompra() {
 
 
   // Vai para o perfil
-  window.location.href = "usuario.html";
+  window.location.href = "usuario.php";
 
 }
 
@@ -120,7 +120,7 @@ function cancelarPagamento() {
     if (confirm("Deseja realmente cancelar o pagamento?")) {
 
         // Volta para o carrinho
-        window.location.href = "carrinho.html";
+        window.location.href = "carrinho.php";
 
     }
 

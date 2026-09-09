@@ -2,7 +2,7 @@ function enviarMensagem() {
   
   alert("Mensagem enviada com sucesso!");
   
-  window.location.href = "index.html";
+  window.location.href = "index.php";
   
 }
 function enviarMensagem() {

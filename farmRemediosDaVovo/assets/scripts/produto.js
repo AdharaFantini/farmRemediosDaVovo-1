@@ -130,7 +130,7 @@ if (botaoFavorito) {
 
       alert("Faça login para adicionar favoritos.");
 
-      window.location.href = "login.html";
+      window.location.href = "login.php";
 
       return;
     }

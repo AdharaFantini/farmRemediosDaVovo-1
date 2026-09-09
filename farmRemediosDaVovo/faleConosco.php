@@ -42,75 +42,89 @@ session_start();
 </script>
 
 <body>
-  
-  
+
+
+<!-- CABEÇALHO -->
 <header>
-  
-  <div class="topo">
-    
-    <div class="logo">
-      
-      <img src="assets/img/logo.jpg" alt="Logo">
-      
-      <h1>Remédios da vovó</h1>
-      
-    </div>
-    
-    <div class="pesquisa">
-      
-    <input type="text" id="pesquisa" placeholder="Pesquisar produtos">
-      
-      <button onclick="pesquisarProduto()">
-    <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-      
-    </div>
-    
-   <div class="icones">
-  
-  <a href="carrinho.php">
-    <i class="fa-solid fa-cart-shopping"></i>
-  </a>
 
-     <a href="login.php" id="iconeUsuario">
-       <i class="fa-solid fa-user"></i>
-     </a>
+    <div class="topo">
 
-  
-</div>
-    
-  </div>
-  
+        <div class="logo">
+
+            <img src="assets/img/logo.jpg" alt="Logo">
+
+            <h1>Remédios da vovó</h1>
+
+        </div>
+
+        <div class="pesquisa">
+
+            <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar produtos">
+
+            <button onclick="pesquisarProduto()">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+        </div>
+
+        <div class="icones">
+
+            <a href="carrinho.php">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+            </a>
+
+            <a href="login.php" id="iconeUsuario">
+
+                <i class="fa-solid fa-user"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
 </header>
 
 
 <nav>
-  
-  <ul>
-    
-    <li><a href="index.php">Início</a></li>
-    
-    <li><a href="produtos.php">Produtos</a></li>
-    
-    <a href="faleonosco.php">Fale Conosco</a>
-    
-    <li><a href="index.php#sobre">Sobre nós</a></li>
-    
-  
-    
-  </ul>
 
-  <div class="login">
+    <ul>
 
-    <span>Seja bem vindo(a),</span>
+        <li>
+            <a href="index.php">Início</a>
+        </li>
 
-    <a href="login.php" id="linkUsuario">
-      Entre ou Cadastre-se
-    </a>
+        <li>
+            <a href="produtos.php">Produtos</a>
+        </li>
 
-  </div>
-  
+        <a href="faleConosco.php">Fale Conosco</a>
+
+        <li>
+            <a href="index.php#sobre">Sobre nós</a>
+        </li>
+
+    </ul>
+
+    <div class="login">
+
+        <span>Seja bem vindo(a),</span>
+
+        <a href="login.php" id="linkUsuario">
+            Entre ou Cadastre-se
+        </a>
+
+    </div>
+
 </nav>
+
   
   
   

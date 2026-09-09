@@ -141,7 +141,7 @@ botoesProduto.forEach(botao => {
         if (id) {
             
             window.location.href =
-                "produto.html?id=" + id;
+                "produto.php?id=" + id;
             
         }
         

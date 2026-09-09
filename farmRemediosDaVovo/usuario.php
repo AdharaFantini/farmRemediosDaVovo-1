@@ -20,6 +20,7 @@ session_start();
 <body>
 
 <!-- ================= HEADER ================= -->
+<!-- CABEÇALHO -->
 <header>
 
     <div class="topo">
@@ -34,10 +35,15 @@ session_start();
 
         <div class="pesquisa">
 
-            <input type="text" id="pesquisa" placeholder="Pesquisar produtos">
+            <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar produtos">
 
             <button onclick="pesquisarProduto()">
+
                 <i class="fa-solid fa-magnifying-glass"></i>
+
             </button>
 
         </div>
@@ -45,11 +51,15 @@ session_start();
         <div class="icones">
 
             <a href="carrinho.php">
+
                 <i class="fa-solid fa-cart-shopping"></i>
+
             </a>
 
             <a href="login.php" id="iconeUsuario">
+
                 <i class="fa-solid fa-user"></i>
+
             </a>
 
         </div>
@@ -63,14 +73,19 @@ session_start();
 
     <ul>
 
-        <li><a href="index.php">Início</a></li>
+        <li>
+            <a href="index.php">Início</a>
+        </li>
 
-        <li><a href="produtos.php">Produtos</a></li>
+        <li>
+            <a href="produtos.php">Produtos</a>
+        </li>
 
         <a href="faleConosco.php">Fale Conosco</a>
 
-        <li><a href="index.php#sobre">Sobre nós</a></li>
-
+        <li>
+            <a href="index.php#sobre">Sobre nós</a>
+        </li>
 
     </ul>
 

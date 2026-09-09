@@ -268,12 +268,12 @@ function irPagamento() {
     );
 
     window.location.href =
-        "usuario.html#endereco";
+        "usuario.php#endereco";
 
     return;
   }
 
-  window.location.href = "pagamento.html";
+  window.location.href = "pagamento.php";
   
 }
 
@@ -291,7 +291,7 @@ function pesquisarProduto() {
     let pesquisa = document.getElementById("pesquisa").value.trim();
 
     if (pesquisa !== "") {
-        location.href = "produtos.html?pesquisa=" + encodeURIComponent(pesquisa);
+        location.href = "produtos.php?pesquisa=" + encodeURIComponent(pesquisa);
     }
 
 }
@@ -315,7 +315,7 @@ function irPagamento() {
   }
 
   // Se tiver produtos e CEP
-  window.location.href = "pagamento.html";
+  window.location.href = "pagamento.php";
 }
 
 
@@ -326,7 +326,7 @@ function finalizarCompra() {
 
   if (!usuario) {
     alert("Faça login para finalizar a compra.");
-    location.href = "login.html";
+    location.href = "login.php";
     return;
   }
 
@@ -380,7 +380,7 @@ function finalizarCompra() {
 
   alert("Pedido realizado com sucesso!");
 
-  location.href = "usuario.html";
+  location.href = "usuario.php";
 }
 
 function irPagamento() {
@@ -413,5 +413,5 @@ function irPagamento() {
       })
   );
 
-  window.location.href = "pagamento.html";
+  window.location.href = "pagamento.php";
 }
