@@ -198,10 +198,7 @@ session_start();
 
                     </div>
 
-                    <a href="#" class="edit">
-                        Editar
-                        <i class="fa-solid fa-pencil"></i>
-                    </a>
+
 
                 </div>
 
@@ -298,9 +295,7 @@ session_start();
 
                     </div>
 
-                    <a href="#" class="see-all">
-                        Ver todos
-                    </a>
+
 
                 </div>
 
@@ -383,6 +378,7 @@ session_start();
 
         </div>
 
+
         <div>
 
             <h3>Contato</h3>
@@ -412,6 +408,9 @@ session_start();
     </div>
 
 </footer>
+
+
+
 <script src="assets/scripts/usuario.js"></script>
 <script src="assets/scripts/nav.js"></script>
 

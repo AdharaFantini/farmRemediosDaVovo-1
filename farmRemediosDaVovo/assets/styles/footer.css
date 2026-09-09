@@ -1,6 +1,6 @@
 footer {
-  background: darkred;
-  color: white;
+  background: #3e0000;
+  color: #ac7b7b;
   margin-top: 50px;
 }
 
@@ -21,7 +21,7 @@ footer {
 
 .footerContainer p {
   line-height: 1.8;
-  color: #d9ecff;
+  color: #b15656;
 }
 
 .copyright {

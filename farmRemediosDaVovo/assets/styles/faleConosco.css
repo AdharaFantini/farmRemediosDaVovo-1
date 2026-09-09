@@ -141,9 +141,13 @@
   
 }
 
+/* ===========================
+   FOOTER
+=========================== */
+
 footer {
-  background: darkred;
-  color: white;
+  background: #3e0000;
+  color: #ac7b7b;
   margin-top: 50px;
 }
 
@@ -151,7 +155,7 @@ footer {
   max-width: 1400px;
   margin: auto;
   padding: 40px 30px;
-  
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 35px;
@@ -164,7 +168,7 @@ footer {
 
 .footerContainer p {
   line-height: 1.8;
-  color: #d9ecff;
+  color: #b15656;
 }
 
 .copyright {
@@ -173,6 +177,8 @@ footer {
   background: black;
   font-size: 14px;
 }
+
+
 
 .erro {
   display: block;

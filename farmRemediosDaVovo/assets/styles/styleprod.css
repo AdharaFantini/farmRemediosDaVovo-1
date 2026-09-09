@@ -24,7 +24,7 @@ aside {
 
 aside h2 {
     margin-bottom: 20px;
-    color: #810F0F;
+    color: #3e0000;
 }
 
 aside ul {
@@ -85,7 +85,7 @@ aside li {
 
 #contador {
     background: #cde5ef;
-    color: whit#000000e;
+    color: white#000000e;
     padding: 8px 15px;
     border-radius: 30px;
     font-size: 14px;
