@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a0538fc-768f-4603-b194-cc9177ef3428" name="Changes" comment="" />
+    <list default="true" id="5a0538fc-768f-4603-b194-cc9177ef3428" name="Changes" comment="a" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +83,7 @@
       <workItem from="1787573719784" duration="904000" />
       <workItem from="1788180815734" duration="6000" />
       <workItem from="1788180974430" duration="1127000" />
-      <workItem from="1788954109146" duration="1511000" />
+      <workItem from="1788954109146" duration="1889000" />
     </task>
     <servers />
   </component>
@@ -92,6 +92,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="5" />
-    <option name="LAST_COMMIT_MESSAGE" value="5" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
 </project>
