@@ -162,11 +162,11 @@ session_start();
         <div class="bannersPromocaoInicio">
 
             <a href="produtos.php" class="bannerPromocao">
-                <img src="assets/img/promocao1.jpg" alt="Promoção de produtos">
+                <img src="assets/img/banner2.jpg" alt="Promoção de produtos">
             </a>
 
             <a href="produtos.php" class="bannerPromocao">
-                <img src="assets/img/promocao2.jpg" alt="Produtos em promoção">
+                <img src="assets/img/banner3.jpg" alt="Produtos em promoção">
             </a>
 
         </div>
@@ -409,11 +409,11 @@ session_start();
 
             <div class="imagensSobreInicio">
 
-                <img src="assets/img/vovó.jpg"
+                <img src="assets/img/vovo.png"
                      alt="Imagem ilustrativa de uma senhora"
                      class="imagemSobrePrincipal">
 
-                <img src="assets/img/farmacia.jpg"
+                <img src="assets/img/lugar.png"
                      alt="Interior da farmácia"
                      class="imagemSobreSecundaria">
 
