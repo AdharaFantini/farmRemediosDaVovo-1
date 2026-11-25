@@ -1,275 +1,751 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-}
 
-body {
-    background: #ffffff;
-}
+/* =========================================
+   INDEX - REMÉDIOS DA VOVÓ
+   SOMENTE CONTEÚDO PRINCIPAL
+   HEADER E FOOTER NÃO ALTERADOS
+========================================= */
 
-/* HEADER */
-
-/* BANNER */
-
-.banner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px;
-    gap: 15px;
-}
-
-.banner img {
+.paginaInicial {
     width: 100%;
-    max-width: 1100px;
-    border-radius: 10px;
+    overflow: hidden;
+    background: #f4f9fd;
+    color: #173d53;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.seta {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background: black;
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-}
+/* =========================================
+   BANNER PRINCIPAL
+========================================= */
 
-/* CARDS */
-
-.cards {
-    background: #700000;
+.paginaInicial .bannerInicio {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 50px 30px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    min-height: 360px;
+    background: #dcecf5;
+    overflow: hidden;
 }
 
-.card {
-    width: 250px;
-    background: white;
-    border-radius: 20px;
-    padding: 35px 20px;
+.paginaInicial .textoBannerInicio {
+    width: 43%;
+    max-width: 550px;
+    padding: 35px 5%;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    z-index: 2;
 }
 
-.card i {
-    font-size: 45px;
-    color: #802121;
-    margin-bottom: 20px;
+.paginaInicial .textoBannerInicio h2 {
+    color: #680800;
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 18px;
 }
 
-.card h2 {
+.paginaInicial .textoBannerInicio p {
+    color: #423c3b;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.paginaInicial .botaoBannerInicio {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #680800;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.paginaInicial .botaoBannerInicio:hover {
+    background: #8b1b0c;
+}
+
+.paginaInicial .imagemBannerInicio {
+    width: 57%;
+    height: 360px;
+    overflow: hidden;
+    border-radius: 50% 0 0 50%;
+    background: #b7d4e5;
+}
+
+.paginaInicial .imagemBannerInicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+/* =========================================
+   TÍTULOS DAS SEÇÕES
+========================================= */
+
+.paginaInicial .faixaTituloInicio {
+    text-align: center;
+    background: #dce8f1;
+    padding: 20px 15px;
+    border-top: 5px solid #284d68;
+}
+
+.paginaInicial .faixaTituloInicio h2 {
+    color: #23445b;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.paginaInicial .faixaTituloInicio p {
+    color: #536878;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   CATEGORIAS
+========================================= */
+
+.paginaInicial .listaCategoriasInicio {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+    padding: 40px 7%;
+    background: #f4f9fd;
+}
+
+.paginaInicial .categoriaInicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #173d53;
+    transition: .3s;
+}
+
+.paginaInicial .categoriaInicio:hover {
+    transform: translateY(-5px);
+}
+
+.paginaInicial .categoriaInicio img {
+    width: 160px;
+    height: 160px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.paginaInicial .categoriaInicio h3 {
+    color: #17445e;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   PROMOÇÕES
+========================================= */
+
+.paginaInicial .faixaTituloBordo {
+    background: #680800;
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+}
+
+.paginaInicial .faixaTituloBordo h2 {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
-.card p {
-    color: #555;
+.paginaInicial .faixaTituloBordo p {
+    color: #f7e7e5;
+    font-size: 12px;
 }
 
-/* PRODUTOS */
-
-.produtos {
-    background: #cde5ef;
-    padding: 40px;
+.paginaInicial .bannersPromocaoInicio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    padding: 30px;
+    background: #f8e7ed;
 }
 
-.produtos h2 {
-    text-align: center;
-    font-size: 45px;
-    margin-bottom: 40px;
-}
-
-.lista-produtos {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.produto {
-    background: #851616;
-    width: 260px;
-    border-radius: 30px;
-    padding: 20px;
-    text-align: center;
-}
-
-.produto img {
-    width: 150px;
-    background: white;
-    padding: 15px;
-}
-
-.produto h3 {
-    color: white;
-    margin: 20px 0;
-}
-
-.preco {
+.paginaInicial .bannerPromocao {
     display: block;
-    background: white;
-    padding: 10px;
-    border-radius: 20px;
-    font-size: 32px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #e8dce2;
+}
+
+.paginaInicial .bannerPromocao img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: .3s;
+}
+
+.paginaInicial .bannerPromocao:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   ENTRE EM CONTATO
+========================================= */
+
+.paginaInicial .listaContatoInicio {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 35px 5%;
+    background: #f4f9fd;
+}
+
+.paginaInicial .cardContatoInicio {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    background: #e5edf4;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #173d53;
+    transition: .3s;
+    min-height: 100px;
+}
+
+.paginaInicial .cardContatoInicio:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0,0,0,.10);
+}
+
+.paginaInicial .iconeContatoInicio {
+    min-width: 55px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #680800;
+    color: white;
+    font-size: 22px;
+    border-radius: 8px;
+}
+
+.paginaInicial .textoContatoInicio {
+    flex: 1;
+}
+
+.paginaInicial .textoContatoInicio h3 {
+    font-size: 15px;
+    color: #680800;
+    margin-bottom: 5px;
+}
+
+.paginaInicial .textoContatoInicio p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #364b5a;
+}
+
+.paginaInicial .setaContatoInicio {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    border-radius: 50%;
+    background: #680800;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================
+   DESTAQUES DA FARMÁCIA
+========================================= */
+
+.paginaInicial .listaDestaquesInicio {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+    background: #f4f9fd;
+}
+
+.paginaInicial .produtoInicio {
+    min-width: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.paginaInicial .imagemDestaqueInicio {
+    height: 230px;
+    background: #680800;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.paginaInicial .produtoInicio:hover .imagemDestaqueInicio {
+    transform: translateY(-4px);
+}
+
+.paginaInicial .imagemDestaqueInicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.paginaInicial .informacaoDestaqueInicio {
+    padding: 12px 5px 5px;
+}
+
+.paginaInicial .informacaoDestaqueInicio h3 {
+    color: #680800;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.paginaInicial .precoDestaqueInicio {
+    display: block;
+    color: #680800;
+    font-size: 13px;
     font-weight: bold;
 }
 
-/* SOBRE */
-
-.sobre {
+.paginaInicial .acoesDestaqueInicio {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 70px 6%;
-    gap: 60px;
+    justify-content: center;
+    padding: 8px 0;
 }
 
-.titulo {
-    width: 35%;
-}
-
-.titulo h2 {
-    background: #cde5ef;
-    border-radius: 0 40px 40px 0;
-    padding: 15px 25px;
-    font-size: 55px;
-}
-
-.texto {
-    width: 65%;
-    font-size: 22px;
-    line-height: 1.7;
-    text-align: justify;
-}
-
-/* RODAPÉ */
-
-/* ===========================
-   FOOTER
-=========================== */
-
-footer {
-    background: #3e0000;
-    color: #ac7b7b;
-    margin-top: 50px;
-}
-
-.footerContainer {
-    max-width: 1400px;
-    margin: auto;
-    padding: 40px 30px;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 35px;
-}
-
-.footerContainer h3 {
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.footerContainer p {
-    line-height: 1.8;
-    color: #b15656;
-}
-
-.copyright {
+.paginaInicial .botaoDestaqueInicio {
+    display: inline-block;
     text-align: center;
-    padding: 18px;
-    background: black;
-    font-size: 14px;
+    text-decoration: none;
+    background: #680800;
+    color: white;
+    border-radius: 25px;
+    padding: 9px 25px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.paginaInicial .botaoDestaqueInicio:hover {
+    background: #8b1b0c;
 }
 
 
-/* RESPONSIVO */
+/* =========================================
+   SOBRE NÓS
+========================================= */
 
-@media(max-width:900px) {
-    
-   
-    
-    .lista-produtos {
-        gap: 20px;
-    }
+.paginaInicial .faixaSobreInicio {
+    background: #23445b;
+    color: white;
+    text-align: center;
+    padding: 22px 15px;
+    border-top: 5px solid #284d68;
 }
 
-.banner{
+.paginaInicial .faixaSobreInicio h2 {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.paginaInicial .faixaSobreInicio p {
+    font-size: 12px;
+    color: #e2eaf0;
+}
+
+.paginaInicial .conteudoSobreInicio {
+    display: grid;
+    grid-template-columns: 50px 1.4fr 1fr;
+    align-items: center;
+    gap: 25px;
+    padding: 35px 5%;
+    background: #f4f9fd;
+}
+
+.paginaInicial .tituloVerticalSobre {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #680800;
+}
+
+.paginaInicial .textoSobreInicio h3 {
+    color: #23445b;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.paginaInicial .textoSobreInicio p {
+    color: #405566;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.paginaInicial .imagensSobreInicio {
     position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 30px auto;
+    min-height: 350px;
 }
 
-.banner img{
-    width: 100%;
-    height: 320px;
+.paginaInicial .imagensSobreInicio img {
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 20px;
     display: block;
 }
 
-.seta{
+.paginaInicial .imagemSobrePrincipal {
+    width: 75%;
+    height: 260px;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    right: 15%;
+}
+
+.paginaInicial .imagemSobreSecundaria {
+    width: 65%;
+    height: 180px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 5px solid #f4f9fd;
+}
+
+
+/* =========================================
+   BOTÃO VOLTAR AO TOPO
+========================================= */
+
+#voltarTopo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
     width: 45px;
     height: 45px;
     border: none;
     border-radius: 50%;
-    background: rgba(255,255,255,0.8);
-    cursor: pointer;
-    font-size: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transition: 0.3s;
-}
-
-.seta:hover{
-    background: #8B0000;
+    background: #680800;
     color: white;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 999;
+    transition: .3s;
 }
 
-.esquerda{
-    left: 15px;
+#voltarTopo:hover {
+    background: #8b1b0c;
 }
 
-.direita{
-    right: 15px;
-}
 
-@media (max-width: 768px){
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
 
-    .banner{
-        margin: 0px 0px;
+@media (max-width: 1000px) {
+
+    .paginaInicial .listaCategoriasInicio {
+        gap: 15px;
+        padding: 30px 4%;
     }
 
-    .banner img{
-        height: 120px;
+    .paginaInicial .categoriaInicio img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .paginaInicial .listaDestaquesInicio {
+        gap: 15px;
+        padding: 30px 4%;
+    }
+
+    .paginaInicial .imagemDestaqueInicio {
+        height: 190px;
+    }
+
+    .paginaInicial .conteudoSobreInicio {
+        grid-template-columns: 40px 1fr 1fr;
+        gap: 15px;
+    }
+
+    .paginaInicial .imagensSobreInicio {
+        min-height: 300px;
+    }
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 750px) {
+
+    .paginaInicial .bannerInicio {
+        min-height: 300px;
+    }
+
+    .paginaInicial .textoBannerInicio {
+        width: 50%;
+        padding: 25px 4%;
+    }
+
+    .paginaInicial .textoBannerInicio h2 {
+        font-size: 22px;
+    }
+
+    .paginaInicial .textoBannerInicio p {
+        font-size: 13px;
+    }
+
+    .paginaInicial .imagemBannerInicio {
+        width: 50%;
+        height: 300px;
+    }
+
+    .paginaInicial .listaContatoInicio {
+        grid-template-columns: 1fr;
+    }
+
+    .paginaInicial .listaDestaquesInicio {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paginaInicial .conteudoSobreInicio {
+        grid-template-columns: 35px 1fr;
+    }
+
+    .paginaInicial .imagensSobreInicio {
+        grid-column: 2;
+        min-height: 300px;
         width: 100%;
-        border-radius: 10px;
     }
 
-    .seta{
-        width: 20px;
-        height: 20px;
-        font-size: 16px;
+    .paginaInicial .imagemSobrePrincipal {
+        height: 220px;
     }
 
-    .esquerda{
-        left: 8px;
+    .paginaInicial .imagemSobreSecundaria {
+        height: 150px;
     }
 
-    .direita{
-        right: 8px;
+    .paginaInicial .bannersPromocaoInicio {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .paginaInicial .bannerPromocao img {
+        height: 180px;
+    }
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 500px) {
+
+    .paginaInicial .bannerInicio {
+        min-height: 250px;
+    }
+
+    .paginaInicial .textoBannerInicio {
+        width: 55%;
+        padding: 20px 10px;
+    }
+
+    .paginaInicial .textoBannerInicio h2 {
+        font-size: 18px;
+    }
+
+    .paginaInicial .textoBannerInicio p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .paginaInicial .botaoBannerInicio {
+        font-size: 10px;
+        padding: 10px 12px;
+    }
+
+    .paginaInicial .imagemBannerInicio {
+        width: 45%;
+        height: 250px;
+    }
+
+    .paginaInicial .faixaTituloInicio h2 {
+        font-size: 19px;
+    }
+
+    .paginaInicial .listaCategoriasInicio {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+        padding: 25px 5%;
+    }
+
+    .paginaInicial .categoriaInicio img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .paginaInicial .categoriaInicio h3 {
+        font-size: 14px;
+    }
+
+    .paginaInicial .faixaTituloBordo h2 {
+        font-size: 21px;
+    }
+
+    .paginaInicial .bannersPromocaoInicio {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .paginaInicial .bannerPromocao img {
+        height: 170px;
+    }
+
+    .paginaInicial .listaContatoInicio {
+        padding: 20px 4%;
+        gap: 12px;
+    }
+
+    .paginaInicial .cardContatoInicio {
+        min-height: 85px;
+        padding: 12px;
+    }
+
+    .paginaInicial .iconeContatoInicio {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 18px;
+    }
+
+    .paginaInicial .textoContatoInicio h3 {
+        font-size: 13px;
+    }
+
+    .paginaInicial .textoContatoInicio p {
+        font-size: 11px;
+    }
+
+    .paginaInicial .setaContatoInicio {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+    }
+
+    .paginaInicial .listaDestaquesInicio {
+        gap: 12px;
+        padding: 25px 4%;
+    }
+
+    .paginaInicial .imagemDestaqueInicio {
+        height: 160px;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .paginaInicial .informacaoDestaqueInicio {
+        padding: 10px 3px;
+    }
+
+    .paginaInicial .informacaoDestaqueInicio h3 {
+        font-size: 13px;
+    }
+
+    .paginaInicial .precoDestaqueInicio {
+        font-size: 12px;
+    }
+
+    .paginaInicial .botaoDestaqueInicio {
+        padding: 8px 18px;
+        font-size: 11px;
+    }
+
+    .paginaInicial .faixaSobreInicio h2 {
+        font-size: 25px;
+    }
+
+    .paginaInicial .conteudoSobreInicio {
+        grid-template-columns: 25px 1fr;
+        gap: 12px;
+        padding: 25px 4%;
+    }
+
+    .paginaInicial .tituloVerticalSobre {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .paginaInicial .textoSobreInicio h3 {
+        font-size: 14px;
+    }
+
+    .paginaInicial .textoSobreInicio p {
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .paginaInicial .imagensSobreInicio {
+        min-height: 230px;
+    }
+
+    .paginaInicial .imagemSobrePrincipal {
+        height: 180px;
+        width: 80%;
+        right: 10%;
+    }
+
+    .paginaInicial .imagemSobreSecundaria {
+        height: 120px;
+        width: 65%;
+    }
+
+    #voltarTopo {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+
+/* =========================================
+   CELULARES MUITO PEQUENOS
+========================================= */
+
+@media (max-width: 350px) {
+
+    .paginaInicial .listaDestaquesInicio {
+        grid-template-columns: 1fr;
     }
 
 }
+
+

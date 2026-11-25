@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ?>
@@ -7,52 +8,52 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Remédios da Vovó</title>
 
-   <link rel="stylesheet" href="assets/styles/header.css">
-<link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/header.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/footer.css">
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-
-
 
 <body>
 
+<!-- HEADER PRESERVADO -->
 <header>
 
     <div class="topo">
 
         <div class="logo">
-
             <img src="assets/img/logo.jpg" alt="Logo">
-
             <h1>Remédios da vovó</h1>
-
         </div>
 
-         <div class="pesquisa">
-          
-         <input type="text" id="pesquisa" placeholder="Pesquisar produtos">
-          
-          <button onclick="pesquisarProduto()">
-    <i class="fa-solid fa-magnifying-glass"></i>
-</button>
-          
+        <div class="pesquisa">
+
+            <input type="text"
+                   id="pesquisa"
+                   placeholder="Pesquisar produtos">
+
+            <button onclick="pesquisarProduto()">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
         </div>
 
         <div class="icones">
 
-    <a href="carrinho.php">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </a>
+            <a href="carrinho.php">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
 
             <a href="login.php" id="iconeUsuario">
                 <i class="fa-solid fa-user"></i>
             </a>
-    
-</div>
+
+        </div>
 
     </div>
 
@@ -67,10 +68,9 @@ session_start();
 
         <li><a href="produtos.php">Produtos</a></li>
 
-        <a href="faleConosco.php">Fale Conosco</a>
+        <li><a href="faleConosco.php">Fale Conosco</a></li>
 
         <li><a href="index.php#sobre">Sobre nós</a></li>
-
 
     </ul>
 
@@ -87,132 +87,347 @@ session_start();
 </nav>
 
 
-<section class="banner">
-
-    <button class="seta esquerda">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
-
-    <img id="banner" src="assets/img/banner1.jpg" alt="Banner">
-
-    <button class="seta direita">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
-
-</section>
-
-<section class="cards">
-
-    <div class="card" onclick="location.href='login.php'">
-
-        <i class="fa-solid fa-user"></i>
-
-        <h2>Área do cliente</h2>
-
-        <p>Acesse ou cadastre</p>
-
-    </div>
+<!-- =================================
+     CONTEÚDO PRINCIPAL
+================================= -->
 
 
-    <div class="card" onclick="location.href='tel:0000000000'">
+<main class="paginaInicial">
 
-        <i class="fa-solid fa-headset"></i>
+    <!-- BANNER PRINCIPAL -->
+    <section class="bannerInicio">
+        <div class="textoBannerInicio">
+            <h2>Cuidar da sua saúde é o nosso compromisso.</h2>
+            <p>
+                Oferecemos produtos de qualidade e atendimento dedicado
+                para cuidar de você e de toda a sua família.
+                Sua saúde e bem-estar são sempre nossa prioridade.
+            </p>
+            <a href="login.php" class="botaoBannerInicio">
+                Faça login ou cadastre-se
+            </a>
+        </div>
 
-        <h2>Atendimento por telefone</h2>
-
-        <p>000.0000-00</p>
-
-    </div>
-
-
-    <div class="card" onclick="window.open('https://wa.me/5531999999999', '_blank')">
-
-        <i class="fa-brands fa-whatsapp"></i>
-
-        <h2>Whatsapp</h2>
-
-        <p>(31) 99999-9999</p>
-
-    </div>
+        <div class="imagemBannerInicio">
+            <img src="assets/img/banner1.jpg" alt="Banner da farmácia">
+        </div>
+    </section>
 
 
-    <div class="card" onclick="location.href='faleConosco.php'">
+    <!-- CATEGORIAS -->
+    <section class="categoriasInicio">
 
-        <i class="fa-regular fa-envelope"></i>
+        <div class="faixaTituloInicio">
+            <h2>Categorias</h2>
+            <p>Escolha aqui para ajudar. Explore nossas opções e cuide de você.</p>
+        </div>
 
-        <h2>Fale conosco</h2>
+        <div class="listaCategoriasInicio">
 
-        <p>Entre em contato</p>
+            <a href="produtos.php" class="categoriaInicio">
+                <img src="assets/img/medicamentos.png" alt="Medicamentos">
+                <h3>Medicamentos</h3>
+            </a>
 
-    </div>
+            <a href="produtos.php" class="categoriaInicio">
+                <img src="assets/img/infantil.png" alt="Infantil">
+                <h3>Infantil</h3>
+            </a>
 
-</section>
+            <a href="produtos.php" class="categoriaInicio">
+                <img src="assets/img/beleza.png" alt="Beleza">
+                <h3>Beleza</h3>
+            </a>
 
-<section class="produtos">
+            <a href="produtos.php" class="categoriaInicio">
+                <img src="assets/img/suplementos.png" alt="Suplementos">
+                <h3>Suplementos</h3>
+            </a>
 
-    <h2>Mais procurados</h2>
+        </div>
+    </section>
 
-    <div class="lista-produtos">
 
-        <div class="produto" onclick="location.href='produto.php?id=dipirona'">
+    <!-- PROMOÇÕES -->
+    <section class="promocoesInicio">
 
-    <img src="assets/img/dipirona.png" alt="Dipirona">
+        <div class="faixaTituloBordo">
+            <h2>PROMOÇÕES</h2>
+            <p>
+                Confira os produtos destacados e aproveite as novidades
+                e ofertas disponíveis em nossa loja.
+            </p>
+        </div>
 
-    <h3>Dipirona Monoidratada</h3>
+        <div class="bannersPromocaoInicio">
 
-    <span class="preco">R$20,00</span>
+            <a href="produtos.php" class="bannerPromocao">
+                <img src="assets/img/promocao1.jpg" alt="Promoção de produtos">
+            </a>
 
-</div>
-
-        <div class="produto" onclick="location.href='produto.php?id=hidratante'">
-
-            <img src="assets/img/hidratante.png" alt="Hidratante">
-
-            <h3>Hidratante corporal</h3>
-
-            <span class="preco">R$24,90</span>
+            <a href="produtos.php" class="bannerPromocao">
+                <img src="assets/img/promocao2.jpg" alt="Produtos em promoção">
+            </a>
 
         </div>
 
-        <div class="produto" onclick="location.href='produto.php?id=protetor'">
+    </section>
 
-            <img src="assets/img/protetor.png" alt="Protetor">
 
-            <h3>Protetor Solar FPS 60</h3>
+    <!-- CONTATO -->
+    <section class="contatoInicio">
 
-            <span class="preco">R$39,90</span>
+        <div class="faixaTituloInicio">
+            <h2>Entre em contato</h2>
+            <p>
+                Estamos aqui para ajudar. Escolha uma das opções abaixo
+                e fale com nossa equipe.
+            </p>
+        </div>
+
+        <div class="listaContatoInicio">
+
+            <a href="login.php" class="cardContatoInicio">
+
+                <div class="iconeContatoInicio">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="textoContatoInicio">
+                    <h3>Área do cliente</h3>
+                    <p>Acesse sua conta e acompanhe seus pedidos.</p>
+                </div>
+
+                <span class="setaContatoInicio">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+
+            <a href="produtos.php" class="cardContatoInicio">
+
+                <div class="iconeContatoInicio">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="textoContatoInicio">
+                    <h3>Entregas e regiões</h3>
+                    <p>Confira nossa região de atendimento.</p>
+                </div>
+
+                <span class="setaContatoInicio">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+
+            <a href="faleConosco.php" class="cardContatoInicio">
+
+                <div class="iconeContatoInicio">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+
+                <div class="textoContatoInicio">
+                    <h3>Fale conosco</h3>
+                    <p>Envie suas dúvidas, sugestões ou solicitações.</p>
+                </div>
+
+                <span class="setaContatoInicio">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
-<section class="sobre" id="sobre">
+    <!-- DESTAQUES -->
+    <section class="destaquesInicio">
 
-    <div class="titulo">
+        <div class="faixaTituloBordo">
+            <h2>Destaques da farmácia</h2>
+            <p>
+                Confira os produtos favoritos de nossos clientes
+                e encontre o que você procura.
+            </p>
+        </div>
 
-        <h2>Sobre nós</h2>
+        <div class="listaDestaquesInicio">
 
-    </div>
+            <!-- PRODUTO 1 -->
+            <div class="produtoInicio"
+                 onclick="location.href='produto.php?id=dipirona'">
 
-    <div class="texto">
+                <div class="imagemDestaqueInicio">
+                    <img src="assets/img/dipirona.png" alt="Dipirona">
+                </div>
 
-        <p>
+                <div class="informacaoDestaqueInicio">
+                    <h3>Dipirona Monoidratada</h3>
+                    <span class="precoDestaqueInicio">R$ 20,00</span>
+                </div>
 
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quisquam fugiat deserunt atque magni autem, dignissimos
-            aspernatur cumque officia libero temporibus minima illo
-            voluptate incidunt, quas labore pariatur exercitationem
-            repudiandae. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Quidem numquam maiores nemo repellendus
-            unde quae perspiciatis dolore praesentium omnis suscipit.
+                <div class="acoesDestaqueInicio">
+                    <a href="produto.php?id=dipirona"
+                       class="botaoDestaqueInicio"
+                       onclick="event.stopPropagation()">
+                        Saiba mais
+                    </a>
+                </div>
 
-        </p>
+            </div>
 
-    </div>
 
-</section>
+            <!-- PRODUTO 2 -->
+            <div class="produtoInicio"
+                 onclick="location.href='produto.php?id=paracetamol'">
+
+                <div class="imagemDestaqueInicio">
+                    <img src="assets/img/paracetamol.png" alt="Paracetamol">
+                </div>
+
+                <div class="informacaoDestaqueInicio">
+                    <h3>Paracetamol</h3>
+                    <span class="precoDestaqueInicio">R$ 16,90</span>
+                </div>
+
+                <div class="acoesDestaqueInicio">
+                    <a href="produto.php?id=paracetamol"
+                       class="botaoDestaqueInicio"
+                       onclick="event.stopPropagation()">
+                        Saiba mais
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- PRODUTO 3 -->
+            <div class="produtoInicio"
+                 onclick="location.href='produto.php?id=hidratante'">
+
+                <div class="imagemDestaqueInicio">
+                    <img src="assets/img/hidratante.png" alt="Hidratante">
+                </div>
+
+                <div class="informacaoDestaqueInicio">
+                    <h3>Hidratante corporal</h3>
+                    <span class="precoDestaqueInicio">R$ 24,90</span>
+                </div>
+
+                <div class="acoesDestaqueInicio">
+                    <a href="produto.php?id=hidratante"
+                       class="botaoDestaqueInicio"
+                       onclick="event.stopPropagation()">
+                        Saiba mais
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- PRODUTO 4 -->
+            <div class="produtoInicio"
+                 onclick="location.href='produto.php?id=protetor'">
+
+                <div class="imagemDestaqueInicio">
+                    <img src="assets/img/protetor.png" alt="Protetor Solar">
+                </div>
+
+                <div class="informacaoDestaqueInicio">
+                    <h3>Protetor Solar FPS 60</h3>
+                    <span class="precoDestaqueInicio">R$ 39,90</span>
+                </div>
+
+                <div class="acoesDestaqueInicio">
+                    <a href="produto.php?id=protetor"
+                       class="botaoDestaqueInicio"
+                       onclick="event.stopPropagation()">
+                        Saiba mais
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE NÓS -->
+    <section class="sobreInicio" id="sobre">
+
+        <div class="faixaSobreInicio">
+            <h2>SOBRE NÓS</h2>
+            <p>Conheça um pouco mais sobre a nossa história.</p>
+        </div>
+
+        <div class="conteudoSobreInicio">
+
+            <div class="tituloVerticalSobre">
+                REMÉDIOS DA VOVÓ
+            </div>
+
+            <div class="textoSobreInicio">
+
+                <h3>Conheça um pouco mais sobre a nossa história!</h3>
+
+                <p>
+                    A Remédios da Vovó nasceu com a proposta de reunir
+                    cuidado, carinho e praticidade em um só lugar.
+                    Nosso objetivo é oferecer uma experiência acessível,
+                    organizada e acolhedora para quem procura produtos
+                    de cuidado pessoal e bem-estar.
+                </p>
+
+                <p>
+                    Queremos facilitar a busca por produtos, oferecendo
+                    variedade, organização e uma experiência simples
+                    para nossos clientes. A saúde e o cuidado estão
+                    sempre entre nossas prioridades.
+                </p>
+
+                <h3>O que oferecemos</h3>
+
+                <p>
+                    Na Remédios da Vovó, trabalhamos para proporcionar
+                    uma experiência de compra organizada e acessível.
+                    Nosso site reúne produtos de diferentes categorias,
+                    facilitando a navegação e a descoberta de novidades.
+                </p>
+
+                <p>
+                    Nosso propósito é construir uma experiência acolhedora,
+                    com dedicação, cuidado e compromisso.
+                </p>
+
+            </div>
+
+            <div class="imagensSobreInicio">
+
+                <img src="assets/img/vovó.jpg"
+                     alt="Imagem ilustrativa de uma senhora"
+                     class="imagemSobrePrincipal">
+
+                <img src="assets/img/farmacia.jpg"
+                     alt="Interior da farmácia"
+                     class="imagemSobreSecundaria">
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- FOOTER PRESERVADO -->
 
 <footer>
 
@@ -258,12 +473,14 @@ session_start();
 
 </footer>
 
-<button id="voltarTopo">
+
+<button id="voltarTopo" aria-label="Voltar ao topo">
     ↑
 </button>
 
+
 <script src="assets/scripts/index.js"></script>
 <script src="assets/scripts/nav.js"></script>
-</body>
 
+</body>
 </html>
